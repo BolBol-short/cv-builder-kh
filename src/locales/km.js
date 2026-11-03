@@ -255,6 +255,8 @@ const km = {
   'preview.title': 'មើលជាមុន',
   'preview.page': 'ទំព័រ {number}',
   'nav.steps': 'ជំហាន',
+  'photo.cropTitle': 'ផ្លាស់ទី និងពង្រីករូបថតរបស់អ្នក',
+  'field.zoom': 'ពង្រីក',
 }
 
 export default km

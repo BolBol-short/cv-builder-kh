@@ -1,12 +1,38 @@
-// Placeholder until Phase 1 builds the real app shell.
+// The top of the app: picks the app language and shows the right screen.
+import { useEffect, useMemo, useState } from 'react'
+import { useRoute } from './app/route.js'
+import { Editor } from './features/editor/Editor.jsx'
+import { StartScreen } from './features/start/StartScreen.jsx'
+import { getSavedUiLang, saveUiLang } from './features/storage/db.js'
+import { I18nContext, isLang, makeT } from './shared/i18n.js'
+import { ToastProvider } from './shared/ui/Toast.jsx'
+
+// Use the language chosen before, otherwise the phone's language.
+function startingUiLang() {
+  const saved = getSavedUiLang()
+  if (isLang(saved)) return saved
+  return navigator.language?.startsWith('km') ? 'km' : 'en'
+}
+
 export default function App() {
+  const [uiLang, setUiLang] = useState(startingUiLang)
+  const i18n = useMemo(() => ({ lang: uiLang, t: makeT(uiLang) }), [uiLang])
+  const route = useRoute()
+
+  useEffect(() => {
+    document.documentElement.lang = uiLang
+    saveUiLang(uiLang)
+  }, [uiLang])
+
   return (
-    <main className="mx-auto max-w-xl p-6">
-      <h1 className="text-2xl font-bold">CV-Builder</h1>
-      <p className="mt-2 text-ink/70">The editor is being rebuilt.</p>
-      <a className="mt-4 inline-block text-accent underline" href="/spikes/">
-        Open the device test page
-      </a>
-    </main>
+    <I18nContext.Provider value={i18n}>
+      <ToastProvider>
+        {route.screen === 'edit' ? (
+          <Editor documentId={route.documentId} stepId={route.stepId} onUiLang={setUiLang} />
+        ) : (
+          <StartScreen onUiLang={setUiLang} />
+        )}
+      </ToastProvider>
+    </I18nContext.Provider>
   )
 }

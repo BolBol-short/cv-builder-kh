@@ -268,6 +268,8 @@ const en = {
   'preview.title': 'Preview',
   'preview.page': 'Page {number}',
   'nav.steps': 'Steps',
+  'photo.cropTitle': 'Move and zoom your photo',
+  'field.zoom': 'Zoom',
 }
 
 export default en
