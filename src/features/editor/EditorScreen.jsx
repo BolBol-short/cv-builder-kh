@@ -1,24 +1,30 @@
-// The editor: one step at a time on phones, with a step list on wide screens.
-import { useEffect, useRef } from 'react'
+// The editor.
+// Phones: one step per screen, with Back / Preview / Next at the bottom.
+// Wide screens: the step next to a live preview (and a step list on very wide screens).
+import { useEffect, useRef, useState } from 'react'
 import { AppHeader } from '../../app/AppHeader.jsx'
 import { useDocument } from '../../app/documentContext.js'
 import { editPath, goTo } from '../../app/route.js'
 import { SaveStatus } from '../../app/SaveStatus.jsx'
 import { useI18n } from '../../shared/i18n.js'
 import { BottomBar } from '../../shared/ui/BottomBar.jsx'
-import { Button } from '../../shared/ui/Button.jsx'
+import { Button, IconButton } from '../../shared/ui/Button.jsx'
+import { Dialog } from '../../shared/ui/Dialog.jsx'
 import { Icon } from '../../shared/ui/Icon.jsx'
 import { StepProgress } from '../../shared/ui/StepProgress.jsx'
+import { Preview } from '../templates/Preview.jsx'
 import { STEPS, stepIndex } from './steps/steps.js'
 
 export function EditorScreen({ stepId, onUiLang }) {
   const { t } = useI18n()
   const { document } = useDocument()
   const headingRef = useRef(null)
+  const [previewOpen, setPreviewOpen] = useState(false)
   const index = stepIndex(stepId)
   const step = STEPS[index]
   const previous = STEPS[index - 1]
   const next = STEPS[index + 1]
+  const isReview = step.id === 'review' // the review step shows its own preview
   const StepComponent = step.Component
 
   const goToStep = (id) => goTo(editPath(document.id, id))
@@ -35,8 +41,8 @@ export function EditorScreen({ stepId, onUiLang }) {
         <SaveStatus />
       </AppHeader>
 
-      <div className="mx-auto max-w-6xl gap-10 px-4 lg:grid lg:grid-cols-[13rem_minmax(0,1fr)] lg:px-8">
-        <nav aria-label={t('nav.steps')} className="hidden py-8 lg:block">
+      <div className="mx-auto max-w-7xl gap-8 px-4 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:px-8 xl:grid-cols-[13rem_minmax(0,1fr)_minmax(0,1fr)]">
+        <nav aria-label={t('nav.steps')} className="hidden py-8 xl:block">
           <ol className="sticky top-20 space-y-1">
             {STEPS.map((item, itemIndex) => (
               <li key={item.id}>
@@ -57,7 +63,7 @@ export function EditorScreen({ stepId, onUiLang }) {
           </ol>
         </nav>
 
-        <main className="max-w-xl py-6 lg:py-8">
+        <main className={`py-6 lg:py-8 ${isReview ? 'lg:col-span-2' : 'max-w-xl'}`}>
           <StepProgress current={index + 1} total={STEPS.length} />
           <h1 ref={headingRef} tabIndex={-1} className="mt-4 text-2xl font-bold outline-none">
             {t(`step.${step.id}`)}
@@ -78,6 +84,14 @@ export function EditorScreen({ stepId, onUiLang }) {
                 {t('action.home')}
               </Button>
             )}
+            {!isReview && (
+              <IconButton
+                icon="eye"
+                label={t('action.preview')}
+                className="lg:hidden"
+                onClick={() => setPreviewOpen(true)}
+              />
+            )}
             {next && (
               <Button variant="primary" onClick={() => goToStep(next.id)}>
                 {t('action.next')}
@@ -86,7 +100,23 @@ export function EditorScreen({ stepId, onUiLang }) {
             )}
           </BottomBar>
         </main>
+
+        {!isReview && (
+          <aside className="hidden lg:block">
+            <div className="sticky top-16 max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-xl bg-ink/5 p-4 lg:mt-8">
+              <Preview doc={document} />
+            </div>
+          </aside>
+        )}
       </div>
+
+      {previewOpen && (
+        <Dialog open fullScreen title={t('preview.title')} onClose={() => setPreviewOpen(false)}>
+          <div className="rounded-xl bg-ink/5 p-2">
+            <Preview doc={document} />
+          </div>
+        </Dialog>
+      )}
     </div>
   )
 }

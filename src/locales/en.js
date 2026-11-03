@@ -270,6 +270,9 @@ const en = {
   'nav.steps': 'Steps',
   'photo.cropTitle': 'Move and zoom your photo',
   'field.zoom': 'Zoom',
+  'cv.salary': 'Expected salary',
+  'action.share': 'Share',
+  'export.pictures': 'Pictures for chat apps',
 }
 
 export default en

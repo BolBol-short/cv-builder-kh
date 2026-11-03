@@ -22,6 +22,8 @@
 /* Khmer stacks vowels and subscripts, so it needs more line height. */
 :lang(km) {
   line-height: 1.7;
+  /* Letter spacing breaks Khmer letter clusters apart (on screen and in the PDF). */
+  letter-spacing: 0 !important;
 }
 
 body {

@@ -12,7 +12,7 @@ export function Button({ variant = 'secondary', icon, children, className = '', 
   return (
     <button
       type={type}
-      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-base font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${STYLES[variant]} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 whitespace-nowrap text-base font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${STYLES[variant]} ${className}`}
       {...props}
     >
       {icon && <Icon name={icon} />}

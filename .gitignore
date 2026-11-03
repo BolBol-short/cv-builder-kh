@@ -162,3 +162,7 @@ vite.config.ts.timestamp-*
 
 # Obsidian per-user UI state
 vault/.obsidian/workspace*.json
+
+# Playwright output
+test-results/
+playwright-report/

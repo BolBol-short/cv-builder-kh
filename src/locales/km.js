@@ -257,6 +257,9 @@ const km = {
   'nav.steps': 'ជំហាន',
   'photo.cropTitle': 'ផ្លាស់ទី និងពង្រីករូបថតរបស់អ្នក',
   'field.zoom': 'ពង្រីក',
+  'cv.salary': 'ប្រាក់ខែរំពឹងទុក',
+  'action.share': 'ចែករំលែក',
+  'export.pictures': 'រូបភាពសម្រាប់កម្មវិធីជជែក',
 }
 
 export default km

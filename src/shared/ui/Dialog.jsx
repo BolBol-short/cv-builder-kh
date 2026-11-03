@@ -4,7 +4,8 @@ import { useEffect, useId, useRef } from 'react'
 import { useI18n } from '../i18n.js'
 import { Button, IconButton } from './Button.jsx'
 
-export function Dialog({ open, onClose, title, children, actions, wide = false }) {
+// fullScreen: fills the whole phone screen (used for the CV preview).
+export function Dialog({ open, onClose, title, children, actions, wide = false, fullScreen = false }) {
   const { t } = useI18n()
   const ref = useRef(null)
   const titleId = useId()
@@ -20,7 +21,11 @@ export function Dialog({ open, onClose, title, children, actions, wide = false }
       ref={ref}
       aria-labelledby={titleId}
       onClose={onClose}
-      className={`m-auto w-[calc(100%-2rem)] rounded-xl bg-paper p-0 text-ink backdrop:bg-ink/50 ${wide ? 'max-w-3xl' : 'max-w-md'}`}
+      className={
+        fullScreen
+          ? 'm-0 h-dvh max-h-none w-screen max-w-none bg-paper p-0 text-ink'
+          : `m-auto w-[calc(100%-2rem)] rounded-xl bg-paper p-0 text-ink backdrop:bg-ink/50 ${wide ? 'max-w-3xl' : 'max-w-md'}`
+      }
     >
       {open && (
         <div className="p-5">
