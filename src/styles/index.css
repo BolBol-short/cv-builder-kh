@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /*
   The app uses exactly three solid colors and no gradients:
@@ -15,8 +15,8 @@
   --color-accent: #1d4ed8;
 
   /* Inter has no Khmer letters, so the browser falls back to Kantumruy Pro for them. */
-  --font-sans: "Inter", "Kantumruy Pro", ui-sans-serif, system-ui, sans-serif;
-  --font-moul: "Moul", "Kantumruy Pro", serif;
+  --font-sans: 'Inter', 'Kantumruy Pro', ui-sans-serif, system-ui, sans-serif;
+  --font-moul: 'Moul', 'Kantumruy Pro', serif;
 }
 
 /* Khmer stacks vowels and subscripts, so it needs more line height. */

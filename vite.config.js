@@ -10,6 +10,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
+    manifest: true, // lets scripts/check-size.js tell first-load code from lazy code
     rollupOptions: {
       input: {
         landing: resolve(import.meta.dirname, 'index.html'),
@@ -17,5 +18,10 @@ export default defineConfig({
         spikes: resolve(import.meta.dirname, 'spikes/index.html'),
       },
     },
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true, // lets Testing Library clean up the page after each test
+    include: ['src/**/*.test.{js,jsx}'],
   },
 })

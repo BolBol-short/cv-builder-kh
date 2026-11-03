@@ -6,6 +6,16 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Build notes, Phases 0 and 1 (2026-11-03)
+- PDF is written by our own small `jpegPdf.js` (picture pages) instead of jsPDF or pdf-lib: about 100 KB less to download.
+- Fonts come from Fontsource npm packages (self-hosted, split by script). That is the court's E1a option; the browser only downloads the files a page uses.
+- Pop-ups use the browser's own `<dialog>` element instead of Radix: built-in focus trap and Escape key, no extra library.
+- `eslint-plugin-jsx-a11y` does not support ESLint 10 yet, so accessibility is checked with `axe-core` inside the tests instead.
+- Field tips and examples live in `src/locales/en.js` and `km.js` (keys `guide.*`) instead of separate guidance files.
+- The circle photo is stored as a small JPEG data URL inside the CV document in IndexedDB (simpler than a separate photo table).
+- App colors are limited to three tokens (`ink`, `paper`, `accent`); the default Tailwind palette is switched off. No gradients.
+- The app lives at `app.html`; `index.html` becomes the landing page in Phase 5.
+
 ### Rebuild decisions (2026-11-03)
 - The profile photo is a circle on every template, including Traditional (owner decision). The crop is 1:1 with a round mask. Cambodian samples ask for a 4x6 rectangle, so the formal layout differs from that sample on purpose.
 - Host on Vercel as a static site. See [[Technical Design]].

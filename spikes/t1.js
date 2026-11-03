@@ -43,17 +43,25 @@ async function runTest(toolName, makeCanvas) {
     output.append(link)
 
     log('t1', `${toolName}: done in ${ms} ms`)
-    askYesNo('t1', `Does the ${toolName} picture match the text exactly (every vowel and subscript)?`, `T1 ${toolName} matches`)
+    askYesNo(
+      't1',
+      `Does the ${toolName} picture match the text exactly (every vowel and subscript)?`,
+      `T1 ${toolName} matches`,
+    )
   } catch (error) {
     log('t1', `${toolName} failed: ${error.message}`)
   }
 }
 
 export function setupT1() {
-  document.getElementById('t1-html2canvas').addEventListener('click', () =>
-    runTest('html2canvas', (node) => html2canvas(node, { scale: 2, backgroundColor: '#ffffff' })),
-  )
-  document.getElementById('t1-htmltoimage').addEventListener('click', () =>
-    runTest('html-to-image', (node) => toCanvas(node, { pixelRatio: 2, backgroundColor: '#ffffff' })),
-  )
+  document
+    .getElementById('t1-html2canvas')
+    .addEventListener('click', () =>
+      runTest('html2canvas', (node) => html2canvas(node, { scale: 2, backgroundColor: '#ffffff' })),
+    )
+  document
+    .getElementById('t1-htmltoimage')
+    .addEventListener('click', () =>
+      runTest('html-to-image', (node) => toCanvas(node, { pixelRatio: 2, backgroundColor: '#ffffff' })),
+    )
 }
