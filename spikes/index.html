@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV-Builder device tests</title>
+    <style>
+      body { font-family: "Inter", "Kantumruy Pro", system-ui, sans-serif; color: #1c1917; background: #fff; margin: 0; }
+      main { max-width: 44rem; margin: 0 auto; padding: 1rem; }
+      section { border: 1px solid rgb(28 25 23 / 0.15); border-radius: 12px; padding: 1rem; margin: 1rem 0; }
+      h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; margin-top: 0; }
+      button { font: inherit; min-height: 44px; padding: 0 1rem; margin: 0.25rem 0.25rem 0.25rem 0; border-radius: 8px;
+               border: 1px solid #1d4ed8; background: #fff; color: #1d4ed8; }
+      button.primary { background: #1d4ed8; color: #fff; }
+      .note { color: rgb(28 25 23 / 0.7); font-size: 0.9rem; }
+      .log { font-family: ui-monospace, monospace; font-size: 0.8rem; white-space: pre-wrap; background: rgb(28 25 23 / 0.05);
+             padding: 0.5rem; border-radius: 8px; min-height: 1.5rem; }
+      .stress { border: 1px dashed rgb(28 25 23 / 0.3); padding: 12px; background: #fff; width: 100%; max-width: 560px; box-sizing: border-box; }
+      .stress p { margin: 0 0 6px; font-size: 16px; letter-spacing: 0; }
+      .stress .title { font-family: "Moul", "Kantumruy Pro", serif; font-size: 20px; color: #1d4ed8; }
+      .output img { width: 100%; max-width: 560px; border: 1px solid rgb(28 25 23 / 0.3); }
+      .a4 { width: 794px; height: 1123px; background: #fff; padding: 48px; box-sizing: border-box; }
+      #pageArea { position: absolute; left: -10000px; top: 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>CV-Builder device tests (Phase 0)</h1>
+      <p class="note">
+        Run each test, answer the questions, then press <b>Copy results</b> at the bottom and send the text
+        (or a screenshot of the Results box) to the project owner.
+      </p>
+
+      <section id="t1">
+        <h2>T1 - Khmer text inside a picture PDF</h2>
+        <p class="note">This box is normal text. The buttons turn it into a picture. Compare them letter by letter.</p>
+        <div class="stress" id="stress" lang="km">
+          <p class="title">ប្រវត្តិរូបសង្ខេប</p>
+          <p>ព្រះរាជាណាចក្រកម្ពុជា ជាតិ សាសនា ព្រះមហាក្សត្រ</p>
+          <p>ស្ត្រី ស្រ្តី ក្សត្រ សាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ អ្នកគ្រប់គ្រងគណនេយ្យ</p>
+          <p>ខ្ញុំបានបញ្ចប់ការសិក្សាថ្នាក់បរិញ្ញាបត្រផ្នែកគណនេយ្យនៅសាកលវិទ្យាល័យជាតិគ្រប់គ្រងក្នុងឆ្នាំ២០២០ហើយបច្ចុប្បន្នកំពុងធ្វើការជាគណនេយ្យករ</p>
+          <p lang="en">Sok Dara - Accountant, +855 12 345 678, GPA 3.5, 2016-2020</p>
+          <p>លេខទូរស័ព្ទ ០១២ ៣៤៥ ៦៧៨ - ថ្ងៃទី១៤ ខែមេសា ឆ្នាំ១៩៩៨</p>
+        </div>
+        <button class="primary" id="t1-html2canvas">Make picture with html2canvas</button>
+        <button class="primary" id="t1-htmltoimage">Make picture with html-to-image</button>
+        <div class="output" id="t1-output"></div>
+        <div class="log" id="t1-log"></div>
+      </section>
+
+      <section id="t3">
+        <h2>T3 - Save a PDF into the Files app</h2>
+        <p class="note">Try each button. After each one, say whether the file reached Files (or Downloads).</p>
+        <button id="t3-pdf">a) Download PDF</button>
+        <button id="t3-octet">b) Download PDF (other type)</button>
+        <button id="t3-json">c) Download backup file (.json)</button>
+        <button id="t3-share-now">d1) Share PDF now</button>
+        <button id="t3-share-late">d2) Share PDF after 3 seconds</button>
+        <button id="t3-prepare">d3) Prepare PDF, then Save</button>
+        <button id="t3-save" hidden class="primary">Save to Files</button>
+        <div class="log" id="t3-log"></div>
+      </section>
+
+      <section id="t4">
+        <h2>T4 - Print route</h2>
+        <p class="note">Press Print, then try to get a PDF into Files. Count your taps.</p>
+        <button id="t4-print">Print</button>
+        <div class="log" id="t4-log"></div>
+      </section>
+
+      <section id="t5">
+        <h2>T5 - Storage on this phone</h2>
+        <button id="t5-idb">Test IndexedDB</button>
+        <button id="t5-persist">Ask to keep data (persist)</button>
+        <label>
+          <span class="note">Pick a normal phone photo:</span>
+          <input type="file" accept="image/*" id="t5-photo" />
+        </label>
+        <div class="log" id="t5-log"></div>
+      </section>
+
+      <section id="t6">
+        <h2>T6 - Three-page PDF</h2>
+        <p class="note">Makes a 3-page PDF from full A4 pages. Watch for a blank page or a crash.</p>
+        <button class="primary" id="t6-run">Make 3-page PDF</button>
+        <div class="log" id="t6-log"></div>
+      </section>
+
+      <section id="t7">
+        <h2>T7 - Facebook / Messenger / Telegram</h2>
+        <p class="note">
+          Send this page's link to yourself in Messenger and in Telegram. Open it from inside each app,
+          run T3 a), and tap the email link below. Write down what happened.
+        </p>
+        <p><a href="mailto:test@example.com?subject=CV-Builder%20test">Email link test</a></p>
+        <div class="log" id="t7-log"></div>
+      </section>
+
+      <section id="t8">
+        <h2>T8 - Fonts</h2>
+        <button id="t8-fonts">List downloaded font files</button>
+        <div class="log" id="t8-log"></div>
+      </section>
+
+      <section>
+        <h2>Results</h2>
+        <button class="primary" id="copy">Copy results</button>
+        <div class="log" id="results"></div>
+      </section>
+
+      <div id="pageArea" aria-hidden="true"></div>
+    </main>
+    <script type="module" src="./spikes.js"></script>
+  </body>
+</html>

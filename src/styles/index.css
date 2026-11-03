@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/*
+  The app uses exactly three solid colors and no gradients:
+    ink    - text, borders, dark buttons
+    paper  - backgrounds
+    accent - main actions, links, focus ring
+  Lighter shades are ink or accent with transparency, e.g. bg-ink/5.
+  The default Tailwind palette is switched off so no other color sneaks in.
+*/
+@theme {
+  --color-*: initial;
+  --color-ink: #1c1917;
+  --color-paper: #ffffff;
+  --color-accent: #1d4ed8;
+
+  /* Inter has no Khmer letters, so the browser falls back to Kantumruy Pro for them. */
+  --font-sans: "Inter", "Kantumruy Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-moul: "Moul", "Kantumruy Pro", serif;
+}
+
+/* Khmer stacks vowels and subscripts, so it needs more line height. */
+:lang(km) {
+  line-height: 1.7;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
