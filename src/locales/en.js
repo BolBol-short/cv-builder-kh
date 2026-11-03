@@ -262,7 +262,7 @@ const en = {
 
   // Report a problem
   'report.subject': 'CV-Builder problem',
-  'report.intro': 'This opens your email app. Only the details below are included, never your CV.',
+  'report.intro': '(opens a short form on GitHub). Only your app version and browser are filled in, never your CV.',
   'report.describe': 'Describe what went wrong:',
 
   'preview.title': 'Preview',
@@ -273,6 +273,7 @@ const en = {
   'cv.salary': 'Expected salary',
   'action.share': 'Share',
   'export.pictures': 'Pictures for chat apps',
+  'action.privacy': 'Privacy',
 }
 
 export default en

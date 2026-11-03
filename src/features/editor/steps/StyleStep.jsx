@@ -28,7 +28,7 @@ function Group({ title, hint, children }) {
   return (
     <fieldset>
       <legend className="mb-1 text-base font-bold">{title}</legend>
-      {hint && <p className="mb-3 text-sm text-ink/60">{hint}</p>}
+      {hint && <p className="mb-3 text-sm text-ink/70">{hint}</p>}
       {children}
     </fieldset>
   )

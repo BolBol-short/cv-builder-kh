@@ -1,19 +1,118 @@
 <!doctype html>
-<html lang="en">
+<html lang="km">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV-Builder</title>
+    <title>CV-Builder — បង្កើត CV សម្រាប់ការងារនៅកម្ពុជា | Make a CV for jobs in Cambodia</title>
+    <meta
+      name="description"
+      content="បង្កើត CV ជាភាសាខ្មែរ ឬអង់គ្លេស ដោយឥតគិតថ្លៃ ហើយទាញយកជា PDF។ Free CV maker for Cambodia: write your CV in Khmer or English and download a PDF. No account. Your CV stays on your phone."
+    />
+    <link rel="canonical" href="https://cv-builder.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#1d4ed8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CV-Builder — Make a CV for jobs in Cambodia" />
+    <meta property="og:description" content="Write your CV in Khmer or English and download it as a PDF. Free, no account." />
+    <meta property="og:url" content="https://cv-builder.vercel.app/" />
+    <meta property="og:image" content="https://cv-builder.vercel.app/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      /* Three colors only: ink #1c1917, paper #ffffff, accent #1d4ed8. System fonts keep this page fast. */
+      :root { --ink: #1c1917; --paper: #ffffff; --accent: #1d4ed8; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--paper); color: var(--ink);
+             font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Khmer", "Khmer OS", sans-serif; line-height: 1.6; }
+      :lang(km) { line-height: 1.8; }
+      a { color: var(--accent); }
+      a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+      .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
+      header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 4rem; }
+      .brand { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--ink); text-decoration: none; }
+      .button { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: 0 1.5rem;
+                border-radius: 0.6rem; background: var(--accent); color: var(--paper); font-weight: 600; text-decoration: none; }
+      .button.small { min-height: 2.75rem; padding: 0 1rem; }
+      .hero { display: grid; gap: 2.5rem; align-items: center; padding: 2.5rem 0 3rem; }
+      @media (min-width: 48rem) { .hero { grid-template-columns: 1.1fr 1fr; padding: 4rem 0; } }
+      h1 { font-size: clamp(1.9rem, 6vw, 2.8rem); line-height: 1.3; margin: 0 0 0.75rem; }
+      .lead { font-size: 1.15rem; color: rgb(28 25 23 / 0.75); margin: 0 0 1.5rem; }
+      .example { width: 100%; max-width: 26rem; justify-self: center; border-radius: 0.5rem; box-shadow: 0 2px 16px rgb(28 25 23 / 0.2); }
+      .note { font-size: 0.95rem; color: rgb(28 25 23 / 0.7); }
+      .features { display: grid; gap: 1rem; padding: 0 0 3rem; list-style: none; margin: 0; }
+      @media (min-width: 48rem) { .features { grid-template-columns: repeat(2, 1fr); } }
+      .features li { border: 1px solid rgb(28 25 23 / 0.15); border-radius: 0.75rem; padding: 1.25rem; }
+      .features h2 { font-size: 1.1rem; margin: 0 0 0.25rem; }
+      .features p { margin: 0; color: rgb(28 25 23 / 0.75); }
+      .en { display: block; font-size: 0.95em; color: rgb(28 25 23 / 0.7); }
+      footer { border-top: 1px solid rgb(28 25 23 / 0.1); padding: 1.5rem 0 2.5rem; }
+      footer .wrap { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    </style>
   </head>
   <body>
-    <!-- Temporary page while the app is rebuilt. Phase 5 turns this into the landing page. -->
-    <main style="font-family: system-ui, sans-serif; max-width: 32rem; margin: 3rem auto; padding: 0 1rem; color: #1c1917">
-      <h1>CV-Builder</h1>
-      <p>The app is being rebuilt.</p>
-      <ul>
-        <li><a href="/app.html">Open the editor</a></li>
-        <li><a href="/spikes/">Device test page (Phase 0)</a></li>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="/">
+          <img src="/favicon.svg" alt="" width="32" height="32" />
+          CV-Builder
+        </a>
+        <a class="button small" href="/app">ចាប់ផ្ដើម <span lang="en">&nbsp;· Start</span></a>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div>
+          <h1>បង្កើត CV សម្រាប់ការងារនៅកម្ពុជា</h1>
+          <p class="lead">
+            បំពេញព័ត៌មានតាមជំហានខ្លីៗ ជាមួយការណែនាំ និងឧទាហរណ៍ រួចទាញយក CV ជា PDF។
+            <span class="en" lang="en">Make a CV for jobs in Cambodia, in Khmer or English. Short steps with tips and examples, then download a PDF.</span>
+          </p>
+          <a class="button" href="/app">បង្កើត CV ឥតគិតថ្លៃ <span lang="en">&nbsp;· Make my CV, free</span></a>
+          <p class="note">
+            មិនចាំបាច់មានគណនី។ CV របស់អ្នកនៅតែលើទូរស័ព្ទរបស់អ្នក។
+            <span class="en" lang="en">No account. Your CV stays on your phone.</span>
+          </p>
+        </div>
+        <img class="example" src="/example-cv-km.jpg" width="600" height="848" alt="ឧទាហរណ៍ CV ជាភាសាខ្មែរ (Example CV in Khmer)" />
+      </section>
+
+      <ul class="features">
+        <li>
+          <h2>ការណែនាំគ្រប់ជំហាន <span class="en" lang="en">Help at every step</span></h2>
+          <p>រាល់ប្រអប់មានគន្លឹះ និងឧទាហរណ៍។ <span class="en" lang="en">Every field has a tip and an example.</span></p>
+        </li>
+        <li>
+          <h2>គំរូ CV បែបកម្ពុជា <span class="en" lang="en">Cambodian CV designs</span></h2>
+          <p>
+            រួមទាំងទម្រង់ “ប្រវត្តិរូបសង្ខេប” ផ្លូវការ និងគំរូទំនើបៗ។
+            <span class="en" lang="en">Including the formal "ប្រវត្តិរូបសង្ខេប" layout and modern designs.</span>
+          </p>
+        </li>
+        <li>
+          <h2>ទាញយក PDF ពីទូរស័ព្ទ <span class="en" lang="en">PDF on your phone</span></h2>
+          <p>
+            រក្សាទុកក្នុង Files ឬផ្ញើតាម Telegram។
+            <span class="en" lang="en">Save it to Files or send it on Telegram.</span>
+          </p>
+        </li>
+        <li>
+          <h2>ឯកជន និងឥតគិតថ្លៃ <span class="en" lang="en">Private and free</span></h2>
+          <p>
+            គ្មានគណនី គ្មានការតាមដាន។ ប្រើបានទាំងពេលគ្មានអ៊ីនធឺណិត។
+            <span class="en" lang="en">No account, no tracking. Works offline after the first visit.</span>
+          </p>
+        </li>
       </ul>
     </main>
+
+    <footer>
+      <div class="wrap">
+        <a href="/privacy">ឯកជនភាព · Privacy</a>
+        <a href="https://github.com/BolBol-short/cv-builder/issues/new" target="_blank" rel="noopener noreferrer"
+          >រាយការណ៍បញ្ហា · Report a problem</a
+        >
+      </div>
+    </footer>
   </body>
 </html>

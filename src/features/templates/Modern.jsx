@@ -51,7 +51,7 @@ export function Modern({ cv, settings, t, lang }) {
         )}
         {contacts.length > 0 && (
           <SideSection title={t('section.contact')}>
-            <ContactList items={contacts} iconClass="text-paper/70" />
+            <ContactList items={contacts} iconClass="text-paper/85" />
           </SideSection>
         )}
         {facts.length > 0 && (
@@ -59,7 +59,7 @@ export function Modern({ cv, settings, t, lang }) {
             <dl className="space-y-[0.4em]">
               {facts.map((fact) => (
                 <div key={fact.label} data-block="">
-                  <dt className="text-[0.85em] text-paper/70 uppercase">{fact.label}</dt>
+                  <dt className="text-[0.85em] text-paper/85 uppercase">{fact.label}</dt>
                   <dd>{fact.value}</dd>
                 </div>
               ))}
@@ -80,7 +80,7 @@ export function Modern({ cv, settings, t, lang }) {
         )}
         {show.languages && (
           <SideSection title={t('section.languages')}>
-            <LanguageEntries cv={cv} t={t} levelClass="text-paper/70" />
+            <LanguageEntries cv={cv} t={t} levelClass="text-paper/85" />
           </SideSection>
         )}
         {show.hobbies && (

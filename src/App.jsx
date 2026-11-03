@@ -6,6 +6,7 @@ import { StartScreen } from './features/start/StartScreen.jsx'
 import { getSavedUiLang, saveUiLang } from './features/storage/db.js'
 import { I18nContext, isLang, makeT } from './shared/i18n.js'
 import { ToastProvider } from './shared/ui/Toast.jsx'
+import { UpdatePrompt } from './app/UpdatePrompt.jsx'
 
 // Use the language chosen before, otherwise the phone's language.
 function startingUiLang() {
@@ -27,6 +28,7 @@ export default function App() {
   return (
     <I18nContext.Provider value={i18n}>
       <ToastProvider>
+        <UpdatePrompt />
         {route.screen === 'edit' ? (
           <Editor documentId={route.documentId} stepId={route.stepId} onUiLang={setUiLang} />
         ) : (

@@ -99,7 +99,7 @@ export function SkillsStep() {
       <TextList list="skills" label={t('field.skills')} {...guide('skills')} suggestions={SKILL_OPTIONS[cvLang]} />
       <section>
         <SubHeading>{t('field.languages')}</SubHeading>
-        <p className="mb-3 text-sm text-ink/60">{guide('languages').tip}</p>
+        <p className="mb-3 text-sm text-ink/70">{guide('languages').tip}</p>
         <ObjectList
           list="languages"
           headingLevel={3}

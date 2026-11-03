@@ -18,7 +18,7 @@ export function Field({ id, label, tip, example, error, className = '', children
       </label>
       {children}
       {(tip || example) && (
-        <p id={`${id}-hint`} className="mt-1 text-sm text-ink/60">
+        <p id={`${id}-hint`} className="mt-1 text-sm text-ink/70">
           {tip}
           {tip && example && ' '}
           {example && t('guide.example', { text: example })}

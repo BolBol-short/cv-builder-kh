@@ -14,7 +14,7 @@ import {
 function Row({ title, children }) {
   return (
     <section className="grid grid-cols-[11em_1fr] gap-[1.8em] border-b border-ink/10 py-[1.1em]">
-      <SectionTitle className="pt-[0.1em] text-[0.92em] font-semibold tracking-wider text-ink/50 uppercase">
+      <SectionTitle className="pt-[0.1em] text-[0.92em] font-semibold tracking-wider text-ink/65 uppercase">
         {title}
       </SectionTitle>
       <div>{children}</div>
@@ -37,12 +37,12 @@ export function Minimal({ cv, settings, t, lang }) {
           </div>
         )}
         <h1 className="text-[2.3em] font-light tracking-wide">{name.main}</h1>
-        {name.other && <p className="text-ink/60">{name.other}</p>}
+        {name.other && <p className="text-ink/70">{name.other}</p>}
         {cv.personal.headline && (
           <p className="mt-[0.3em] tracking-[0.2em] text-(--cv-accent) uppercase">{cv.personal.headline}</p>
         )}
         {contacts.length > 0 && (
-          <p className="mt-[0.8em] text-[0.92em] text-ink/60">{contacts.map((item) => item.value).join('   |   ')}</p>
+          <p className="mt-[0.8em] text-[0.92em] text-ink/70">{contacts.map((item) => item.value).join('   |   ')}</p>
         )}
       </header>
 

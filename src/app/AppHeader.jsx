@@ -8,11 +8,11 @@ export function AppHeader({ onUiLang, children }) {
   return (
     <header className="sticky top-0 z-30 border-b border-ink/10 bg-paper">
       <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2 lg:px-8">
-        <a href="#/" className="flex min-h-11 items-center gap-2 font-bold" aria-label={t('action.home')}>
+        <a href="#/" className="flex min-h-11 items-center gap-2 font-bold" title={t('action.home')}>
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-paper">
             <Icon name="file" className="h-5 w-5" />
           </span>
-          <span className="hidden sm:inline">{t('app.name')}</span>
+          <span className="sr-only sm:not-sr-only">{t('app.name')}</span>
         </a>
         <div className="flex-1">{children}</div>
         <div className="inline-flex rounded-lg border border-ink/15 p-0.5" role="group" aria-label={t('design.uiLang')}>

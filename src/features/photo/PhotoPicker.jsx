@@ -57,7 +57,7 @@ export function PhotoPicker() {
             {t('action.removePhoto')}
           </Button>
         )}
-        <p className="text-sm text-ink/60">{t('guide.photo.tip')}</p>
+        <p className="text-sm text-ink/70">{t('guide.photo.tip')}</p>
       </div>
 
       {chosenUrl && (

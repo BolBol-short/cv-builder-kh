@@ -82,7 +82,7 @@ export function Professional({ cv, settings, t, lang }) {
               <dl className="space-y-[0.4em]">
                 {facts.map((fact) => (
                   <div key={fact.label} data-block="">
-                    <dt className="text-[0.85em] text-ink/60 uppercase">{fact.label}</dt>
+                    <dt className="text-[0.85em] text-ink/70 uppercase">{fact.label}</dt>
                     <dd className="font-medium">{fact.value}</dd>
                   </div>
                 ))}

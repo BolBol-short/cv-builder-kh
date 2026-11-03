@@ -66,7 +66,7 @@ export function TextList({ list, label, tip, example, suggestions = [], inputMod
 
       {unusedSuggestions.length > 0 && (
         <div className="mt-3">
-          <p className="mb-2 text-sm text-ink/60">{t('field.suggestions')}</p>
+          <p className="mb-2 text-sm text-ink/70">{t('field.suggestions')}</p>
           <div className="flex flex-wrap gap-2">
             {unusedSuggestions.map((suggestion) => (
               <button

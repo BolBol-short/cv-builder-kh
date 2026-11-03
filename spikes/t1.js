@@ -1,5 +1,5 @@
 // T1: does Khmer still look right after we turn the text into a picture?
-import html2canvas from 'html2canvas'
+import html2canvas from 'html2canvas-pro'
 import { toCanvas } from 'html-to-image'
 import { jpegsToPdf, canvasToJpeg } from '../src/features/export/jpegPdf.js'
 import { log, askYesNo } from './results.js'
@@ -57,7 +57,7 @@ export function setupT1() {
   document
     .getElementById('t1-html2canvas')
     .addEventListener('click', () =>
-      runTest('html2canvas', (node) => html2canvas(node, { scale: 2, backgroundColor: '#ffffff' })),
+      runTest('html2canvas-pro', (node) => html2canvas(node, { scale: 2, backgroundColor: '#ffffff' })),
     )
   document
     .getElementById('t1-htmltoimage')

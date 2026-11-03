@@ -77,7 +77,7 @@ export function Entry({ title, subtitle, date, body }) {
     <div data-block="" className="mb-[0.9em] last:mb-0">
       <div className="flex items-baseline justify-between gap-[1em]">
         <p className="text-[1.08em] font-semibold">{title}</p>
-        {date && <p className="shrink-0 text-[0.92em] text-ink/60">{date}</p>}
+        {date && <p className="shrink-0 text-[0.92em] text-ink/70">{date}</p>}
       </div>
       {subtitle && <p className="text-(--cv-accent)">{subtitle}</p>}
       {body && <Bullets text={body} className="mt-[0.25em] text-ink/80" />}
@@ -118,14 +118,14 @@ export function CertificationEntries({ cv, lang }) {
         <li key={item.id} data-block="">
           <span className="font-semibold">{item.name}</span>
           {item.issuer && <span className="text-ink/70"> — {item.issuer}</span>}
-          {item.date && <span className="text-ink/60"> ({formatMonth(item.date, lang)})</span>}
+          {item.date && <span className="text-ink/70"> ({formatMonth(item.date, lang)})</span>}
         </li>
       ))}
     </ul>
   )
 }
 
-export function LanguageEntries({ cv, t, levelClass = 'text-ink/60' }) {
+export function LanguageEntries({ cv, t, levelClass = 'text-ink/70' }) {
   return (
     <ul className="space-y-[0.25em]">
       {cv.languages

@@ -103,7 +103,13 @@ export function EditorScreen({ stepId, onUiLang }) {
 
         {!isReview && (
           <aside className="hidden lg:block">
-            <div className="sticky top-16 max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-xl bg-ink/5 p-4 lg:mt-8">
+            <div
+              // Focusable, so keyboard users can scroll the preview too.
+              tabIndex={0}
+              role="region"
+              aria-label={t('preview.title')}
+              className="sticky top-16 max-h-[calc(100dvh-5rem)] overflow-y-auto rounded-xl bg-ink/5 p-4 lg:mt-8"
+            >
               <Preview doc={document} />
             </div>
           </aside>

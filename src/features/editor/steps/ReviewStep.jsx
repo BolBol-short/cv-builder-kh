@@ -6,6 +6,8 @@ import { Button } from '../../../shared/ui/Button.jsx'
 import { Icon } from '../../../shared/ui/Icon.jsx'
 import { downloadBlob } from '../../export/download.js'
 import { ExportPanel } from '../../export/ExportPanel.jsx'
+import { InstallHelp } from '../../../app/InstallHelp.jsx'
+import { ReportProblemLink } from '../../../app/ReportProblemLink.jsx'
 import { InAppBanner } from '../../export/InAppBanner.jsx'
 import { backupFileName, makeBackupBlob } from '../../storage/backup.js'
 import { Preview } from '../../templates/Preview.jsx'
@@ -50,6 +52,7 @@ export function ReviewStep({ goToStep }) {
       <div className="space-y-8">
         <InAppBanner />
         <ExportPanel />
+        <InstallHelp />
 
         <section>
           <p className="font-semibold">{t('review.pages', { count: pageCount })}</p>
@@ -74,7 +77,7 @@ export function ReviewStep({ goToStep }) {
                       onClick={() => goToStep(gap.step)}
                     >
                       {t(gap.key)}
-                      <Icon name="right" className="h-4 w-4 text-ink/50" />
+                      <Icon name="right" className="h-4 w-4 text-ink/65" />
                     </button>
                   </li>
                 ))}
@@ -106,6 +109,7 @@ export function ReviewStep({ goToStep }) {
             {t('action.downloadBackup')}
           </Button>
         )}
+        <ReportProblemLink templateId={document.settings.template} />
       </div>
 
       <div className="min-w-0 rounded-xl bg-ink/5 p-3">

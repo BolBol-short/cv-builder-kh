@@ -47,7 +47,7 @@ export function Classic({ cv, settings, t, lang }) {
           <dl className="grid grid-cols-2 gap-x-[1.5em] gap-y-[0.25em]">
             {facts.map((fact) => (
               <div key={fact.label} data-block="" className="flex gap-[0.5em]">
-                <dt className="w-[9em] shrink-0 text-ink/60">{fact.label}</dt>
+                <dt className="w-[9em] shrink-0 text-ink/70">{fact.label}</dt>
                 <dd className="font-medium">{fact.value}</dd>
               </div>
             ))}

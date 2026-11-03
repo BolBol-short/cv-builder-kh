@@ -1,6 +1,6 @@
 // T6: can this phone make a 3-page PDF without running out of memory?
 // Each page is drawn on its own canvas, one at a time, then thrown away.
-import html2canvas from 'html2canvas'
+import html2canvas from 'html2canvas-pro'
 import { jpegsToPdf, canvasToJpeg } from '../src/features/export/jpegPdf.js'
 import { log, record } from './results.js'
 

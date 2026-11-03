@@ -38,7 +38,7 @@ export function ObjectList({ list, fields, titleOf, headingLevel = 2 }) {
   return (
     <div className="space-y-4">
       {items.length === 0 && (
-        <p className="rounded-lg border border-dashed border-ink/25 p-4 text-center text-ink/60">{t('field.empty')}</p>
+        <p className="rounded-lg border border-dashed border-ink/25 p-4 text-center text-ink/70">{t('field.empty')}</p>
       )}
 
       {items.map((item, index) => {

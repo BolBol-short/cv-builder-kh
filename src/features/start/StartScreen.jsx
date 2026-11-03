@@ -2,6 +2,7 @@
 // or try an example. Also the place to delete everything on this device.
 import { useEffect, useRef, useState } from 'react'
 import { AppHeader } from '../../app/AppHeader.jsx'
+import { ReportProblemLink } from '../../app/ReportProblemLink.jsx'
 import { editPath, goTo } from '../../app/route.js'
 import { formatDate } from '../../shared/format/dates.js'
 import { useI18n } from '../../shared/i18n.js'
@@ -132,7 +133,7 @@ export function StartScreen({ onUiLang }) {
                 <li key={doc.id} className="flex items-center gap-2 rounded-xl border border-ink/15 p-3">
                   <a href={`#${editPath(doc.id, 'review')}`} className="min-w-0 flex-1">
                     <span className="block truncate font-semibold">{documentTitle(doc) || t('start.untitled')}</span>
-                    <span className="text-sm text-ink/60">
+                    <span className="text-sm text-ink/70">
                       {t('start.lastEdited', { date: formatDate(doc.updatedAt.slice(0, 10), lang) })}
                     </span>
                   </a>
@@ -151,6 +152,12 @@ export function StartScreen({ onUiLang }) {
           <Button variant="ghost" icon="trash" onClick={askToClearAll}>
             {t('action.clearAll')}
           </Button>
+          <div className="mt-4 space-y-2">
+            <ReportProblemLink />
+            <a href="/privacy" className="text-sm font-semibold text-accent underline-offset-4 hover:underline">
+              {t('action.privacy')}
+            </a>
+          </div>
         </div>
       </main>
 

@@ -6,6 +6,16 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Build notes, Phases 2 to 5 (2026-11-03)
+- PDF pictures are drawn with `html2canvas-pro`, not the original `html2canvas`: Tailwind 4 writes faded colors with `color-mix()`/`oklab()`, which the original cannot read. Checked in desktop Chromium: Khmer comes out correct. iPhone still to be tested (spike page T1).
+- Export is two taps on purpose ("Create PDF", then "Download PDF" / "Share"), so iPhone treats the save as a direct user action.
+- Khmer text never gets letter spacing (`:lang(km) { letter-spacing: 0 }`): spacing breaks Khmer letter clusters, on screen and in the PDF.
+- The CV preview is hidden from screen readers (it repeats the form); the review step states the page count in text.
+- "Report a problem" opens a GitHub issue form (no personal email is published). Change `REPORT_URL` in `src/app/config.js` to use email instead.
+- Muted text was raised to at least 70% ink (65% for small headings) after axe found contrast failures in a real browser.
+- Offline: only Latin and Khmer font files are precached (about 0.9 MB in total); landing pictures are not.
+- Lighthouse (simulated slow phone): landing 100 performance, editor 94 performance with LCP 2.6 s (target 2.5 s). Not fixed yet.
+
 ### Build notes, Phases 0 and 1 (2026-11-03)
 - PDF is written by our own small `jpegPdf.js` (picture pages) instead of jsPDF or pdf-lib: about 100 KB less to download.
 - Fonts come from Fontsource npm packages (self-hosted, split by script). That is the court's E1a option; the browser only downloads the files a page uses.
