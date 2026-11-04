@@ -6,7 +6,7 @@ updated: 2026-11-04
 
 # File Map
 
-Root: `index.html` (landing), `app.html` (editor), `privacy.html`, `vite.config.js` (pages, offline app, tests), `vercel.json` (headers, clean URLs), `playwright.config.js`, `eslint.config.js`, `scripts/check-size.js` (download budget), `public/` (icons, example pictures, robots, sitemap), `spikes/` (device test page), `e2e/` (browser tests).
+Root: `index.html` (landing), `app.html` (editor), `privacy.html`, `vite.config.js` (pages, offline app, tests), `vercel.json` (headers, clean URLs), `eslint.config.js`, `scripts/check-size.js` (download budget), `public/` (icons, example pictures, robots, sitemap), `spikes/` (device test page).
 
 ## `src/`
 
@@ -24,6 +24,6 @@ Root: `index.html` (landing), `app.html` (editor), `privacy.html`, `vite.config.
 | `features/storage/` | `schema.js`, `db.js`, `backup.js`, `useAutosave.js` |
 | `shared/` | `i18n.js`, `ids.js`, `format/` (dates, text, lists, contrast), `ui/` (Button, Field, Dialog, Toast, StepProgress, BottomBar, Icon) |
 
-Tests sit next to the code as `*.test.js(x)`; browser tests are in `e2e/`.
+Tests sit next to the code as `*.test.js(x)`.
 
 Related: [[Architecture]].

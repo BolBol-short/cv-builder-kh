@@ -35,10 +35,10 @@ updated: 2026-11-04
 | PDF | `html2canvas-pro` draws each page; our own `jpegPdf.js` writes the PDF |
 | Photo crop | `react-easy-crop` (loaded only when used) |
 | Offline | `vite-plugin-pwa` (Workbox) |
-| Tests | Vitest + Testing Library + axe-core; Playwright + @axe-core/playwright |
+| Tests | Vitest + Testing Library + axe-core |
 
 ## Size
 
-About 5,700 lines in 80 source files under `src/`, plus 11 unit test files and 6 browser test files. First download for the editor: 75 KB gzip.
+About 5,700 lines in 80 source files under `src/`, plus 11 unit test files. First download for the editor: 75 KB gzip.
 
 See also: [[Architecture]], [[File Map]], [[Data Model]].

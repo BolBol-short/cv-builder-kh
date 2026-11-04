@@ -22,7 +22,7 @@ Executable plan for rebuilding CV-Builder. It turns [[Plan]], [[Product]], [[CV 
 | 5 | Done | Offline app, install help, update prompt, landing and privacy pages, report link, axe and offline browser tests. Lighthouse (simulated slow phone): landing 100, editor 94 with LCP 2.5 s |
 | 6 | Partly done | `v1/` deleted and vault rewritten (2026-11-04). **Owner:** deploy, phone tests, beta. Then remove `spikes/` and `html-to-image` |
 
-Checks on every commit: `npm run check` (lint, 59 unit tests, build, size) and `npm run e2e` (21 browser tests).
+Checks on every commit: `npm run check` (lint, 59 unit tests, build, size). The `e2e/` browser tests were removed on 2026-11-04 at the owner's request.
 
 ## 0. How the builder uses this plan
 

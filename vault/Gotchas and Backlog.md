@@ -12,7 +12,7 @@ updated: 2026-11-04
 3. **Elegant template** uses the phone's own serif font for English letters, so it can look slightly different on Android.
 4. **Domain** `cv-builder.vercel.app` is assumed in the landing page, sitemap and preview image. Change it if Vercel gives another address.
 5. **PDF text is not selectable** (picture pages). Fine for sending and printing; recruiter software cannot read it.
-6. **Screenshot baselines** in `e2e/templates.spec.js-snapshots/` are made on Windows; on another system run `--update-snapshots` first.
+6. **No browser tests.** The `e2e/` browser tests were removed on 2026-11-04 at the owner's request. Check the PDF download, photo crop, offline mode and templates by hand after big changes.
 7. **`spikes/` and `html-to-image`** are only for Phase 0 tests; remove both before launch.
 8. **npm audit** warnings come from dev tools (ESLint dependencies), not from the app.
 

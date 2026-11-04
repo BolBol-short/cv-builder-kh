@@ -6,6 +6,9 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Browser tests removed (2026-11-04)
+- The owner asked to delete `e2e/` (Playwright). Unit tests (`npm test`, including axe accessibility checks) stay. PDF, photo, offline and template looks are now checked by hand.
+
 ### Example data is made up (2026-11-04)
 - The example CV, field examples and tests use invented data only: "Sample Name" / "ឈ្មោះ គំរូ", "Sample Trading Co., Ltd.", "Sample University", `example.com` emails, phone numbers of zeros. No real people, companies or schools.
 - Landing page shows two example CVs and a gallery of all 10 designs (pictures in `public/designs/`, not saved for offline use).

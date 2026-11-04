@@ -16,7 +16,7 @@ A free, frontend-only web app for making a CV (Curriculum Vitae) the way Cambodi
 - PDF download that works on phones (on iPhone it goes to the Files app), plus page pictures for chat apps.
 - Saved automatically on the device, several CVs at once, backup files you can keep, an example CV.
 - Works offline after the first visit, and can be added to the Home Screen.
-- Built for accessibility (WCAG 2.2 AA checks in the tests) and for slow phones (small download).
+- Built for accessibility (WCAG 2.2 AA checks in the unit tests) and for slow phones (small download).
 
 ## Tech
 
@@ -40,7 +40,6 @@ Then open http://localhost:5173/app.html for the editor (http://localhost:5173/ 
 | `npm run preview` | Serve the production build |
 | `npm run lint` | ESLint |
 | `npm test` | Unit and component tests (Vitest) |
-| `npm run e2e` | Browser tests (Playwright). First time: `npx playwright install chromium` |
 | `npm run check` | Lint, tests, build and the download-size check, all at once |
 | `npm run format` | Prettier |
 
@@ -59,7 +58,6 @@ src/
   features/photo/          photo choose and circle crop
   shared/                  translation helper, formatting, small UI components
   locales/                 all English and Khmer text
-e2e/                       browser tests
 spikes/                    Phase 0 device test page (removed before launch)
 vault/                     project notes and the rebuild plan (open in Obsidian)
 ```

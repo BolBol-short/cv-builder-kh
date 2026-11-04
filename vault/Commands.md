@@ -14,12 +14,9 @@ npm run build      # production build into dist/
 npm run preview    # serve the build
 npm run lint       # ESLint
 npm test           # unit and component tests (Vitest)
-npm run e2e        # browser tests (Playwright); first time: npx playwright install chromium
 npm run check      # lint + tests + build + download-size check
 npm run format     # Prettier
 ```
-
-After changing a template's look: `npm run e2e -- --update-snapshots`.
 
 ## Git
 

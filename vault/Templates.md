@@ -34,6 +34,6 @@ Ten templates in `src/features/templates/`, in picker order (`TEMPLATE_IDS` in `
 1. Create `Name.jsx` following the rules (copy a similar template).
 2. Add it to `TEMPLATES` in `templates.js` and its id to `TEMPLATE_IDS` in `storage/schema.js`.
 3. Add `template.<id>` to `locales/en.js` and `locales/km.js`.
-4. Add its names to `e2e/templates.spec.js` and run `npm run e2e -- --update-snapshots`.
+4. Check it by hand in the preview, in English and Khmer, with a CV long enough for two pages.
 
 The picker thumbnail is drawn from the real template automatically.
