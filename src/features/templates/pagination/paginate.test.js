@@ -8,6 +8,10 @@ describe('findPageStarts', () => {
     expect(findPageStarts([block(0, 500)], 900, 1000, 1000)).toEqual([0])
   })
 
+  it('does not add an empty page for a fraction of a pixel', () => {
+    expect(findPageStarts([], 1085.4, 1085, 1040)).toEqual([0])
+  })
+
   it('cuts at the page end when no block is in the way', () => {
     expect(findPageStarts([block(0, 400), block(1100, 1200)], 1500, 1000, 1000)).toEqual([0, 1000])
   })

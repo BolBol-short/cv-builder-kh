@@ -21,7 +21,9 @@ export function findPageStarts(
   let pageStart = 0
   let pageHeight = firstPageHeight
 
-  while (sheetHeight - pageStart > pageHeight) {
+  // Measured heights can be off by a fraction of a pixel when the preview is shrunk,
+  // which would otherwise add an empty last page.
+  while (sheetHeight - pageStart > pageHeight + 1) {
     const pageEnd = pageStart + pageHeight
     let nextStart = pageEnd
 

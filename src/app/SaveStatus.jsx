@@ -21,6 +21,7 @@ export function SaveStatus() {
       {saveStatus === 'saved' && (
         <>
           <Icon name="check" className="h-4 w-4" />
+          <span className="sm:hidden">{t('save.savedShort')}</span>
           <span className="hidden sm:inline">
             {t('save.saved')}
             {savedTime && ` · ${t('save.lastSaved', { time: savedTime })}`}

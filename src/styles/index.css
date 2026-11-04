@@ -29,6 +29,11 @@
 body {
   background: var(--color-paper);
   color: var(--color-ink);
+  caret-color: var(--color-accent);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
 /* A clear focus ring for keyboard users, in the accent color. */

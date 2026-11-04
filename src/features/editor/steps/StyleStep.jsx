@@ -52,7 +52,7 @@ export function StyleStep() {
               value={lang.code}
               checked={settings.cvLang === lang.code}
               onChange={() => setSetting('cvLang', lang.code)}
-              className="justify-center py-4 text-lg font-semibold"
+              className="justify-center px-8 py-4 text-lg font-semibold"
             >
               {lang.label}
             </ChoiceCard>
@@ -134,7 +134,7 @@ export function StyleStep() {
               value={size}
               checked={settings.fontSize === size}
               onChange={() => setSetting('fontSize', size)}
-              className="justify-center"
+              className="justify-center px-8"
             >
               {t(`design.fontSize.${size}`)}
             </ChoiceCard>

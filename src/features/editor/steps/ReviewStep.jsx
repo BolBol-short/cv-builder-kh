@@ -55,7 +55,9 @@ export function ReviewStep({ goToStep }) {
         <InstallHelp />
 
         <section>
-          <p className="font-semibold">{t('review.pages', { count: pageCount })}</p>
+          <p className="font-semibold">
+            {pageCount === 1 ? t('review.onePage') : t('review.pages', { count: pageCount })}
+          </p>
           {pageCount > 2 && <p className="mt-1 text-ink/70">{t('review.tooLong')}</p>}
         </section>
 

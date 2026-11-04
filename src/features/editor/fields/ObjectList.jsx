@@ -17,7 +17,8 @@ import { CheckboxField, MonthYearField, SelectField, TextAreaField, TextField } 
 import { useToast } from '../../../shared/ui/toastContext.js'
 
 // headingLevel: 2 when the list is the main content of a step, 3 when it sits under a sub-heading.
-export function ObjectList({ list, fields, titleOf, headingLevel = 2 }) {
+// twoColumns: show the fields side by side even on phones (for short fields).
+export function ObjectList({ list, fields, titleOf, headingLevel = 2, twoColumns = false }) {
   const { t } = useI18n()
   const { document, dispatch } = useDocument()
   const showToast = useToast()
@@ -62,7 +63,7 @@ export function ObjectList({ list, fields, titleOf, headingLevel = 2 }) {
               <IconButton icon="trash" label={`${t('action.remove')}: ${title}`} onClick={() => remove(item, index)} />
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className={`grid gap-4 ${twoColumns ? 'grid-cols-2' : 'sm:grid-cols-2'}`}>
               {fields.map((field) => (
                 <ItemField
                   key={field.name}

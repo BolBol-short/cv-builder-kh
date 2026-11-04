@@ -103,6 +103,7 @@ export function SkillsStep() {
         <ObjectList
           list="languages"
           headingLevel={3}
+          twoColumns
           titleOf={(item) => item.language}
           fields={[
             { name: 'language', label: t('field.language'), suggestions: LANGUAGE_OPTIONS[cvLang] },

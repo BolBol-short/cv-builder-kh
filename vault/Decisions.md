@@ -6,6 +6,12 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### UI/UX polish pass (2026-11-04)
+- Fixed: an empty or short CV showed a blank second page and "2 page(s)" (a fraction of a pixel after shrinking). Page splitting now ignores up to 1 px.
+- Page count reads "1 page" / "N pages". Phone header shows a short "Saved" next to the check mark.
+- Check marks no longer cover the text on the CV-language and text-size cards. Languages show language and level side by side on phones.
+- Text selection and the typing cursor use the accent color. Landing features are a plain list with an accent rule, not a grid of boxes. Privacy page headings have a clear size scale.
+
 ### Shrinking with transform, not zoom (2026-11-04)
 - Template pictures and the CV preview shrink with `transform: scale()`. With CSS `zoom`, iPhone Safari kept the text at a minimum size, so small template pictures showed only a few huge words (owner screenshot).
 

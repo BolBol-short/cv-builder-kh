@@ -26,6 +26,7 @@
              font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Khmer", "Khmer OS", sans-serif; line-height: 1.6; }
       :lang(km) { line-height: 1.8; }
       a { color: var(--accent); }
+      ::selection { background: rgb(29 78 216 / 0.2); }
       a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
       .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1rem; }
       header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 4rem; }
@@ -51,9 +52,10 @@
       .gallery img { width: 100%; height: auto; display: block; border-radius: 0.4rem; border: 1px solid rgb(28 25 23 / 0.15); }
       .gallery p { margin: 0.4rem 0 0; font-size: 0.95rem; text-align: center; }
       .note { font-size: 0.95rem; color: rgb(28 25 23 / 0.7); }
-      .features { display: grid; gap: 1rem; padding: 0 0 3rem; list-style: none; margin: 0; }
+      /* A plain list with a thin rule above each point, not a grid of boxes. */
+      .features { display: grid; gap: 1.75rem 2.5rem; padding: 0 0 3.5rem; list-style: none; margin: 0; }
       @media (min-width: 48rem) { .features { grid-template-columns: repeat(2, 1fr); } }
-      .features li { border: 1px solid rgb(28 25 23 / 0.15); border-radius: 0.75rem; padding: 1.25rem; }
+      .features li { border-top: 2px solid var(--accent); padding-top: 1rem; }
       .features h2 { font-size: 1.1rem; margin: 0 0 0.25rem; }
       .features p { margin: 0; color: rgb(28 25 23 / 0.75); }
       .en { display: block; font-size: 0.95em; color: rgb(28 25 23 / 0.7); }

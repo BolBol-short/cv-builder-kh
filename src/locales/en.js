@@ -69,6 +69,7 @@ const en = {
 
   // Saving
   'save.saved': 'Saved on this device',
+  'save.savedShort': 'Saved',
   'save.saving': 'Saving…',
   'save.failed': 'Could not save on this device. Download a backup file to keep your work.',
   'save.lastSaved': 'Last saved {time}',
@@ -77,7 +78,8 @@ const en = {
   // Review
   'review.gaps': 'You could still add',
   'review.complete': 'Your CV looks complete.',
-  'review.pages': 'Your CV is {count} page(s) long.',
+  'review.onePage': 'Your CV is 1 page long.',
+  'review.pages': 'Your CV is {count} pages long.',
   'review.tooLong': 'Most employers prefer one or two pages.',
   'gap.name': 'Your name',
   'gap.phone': 'Phone number',
