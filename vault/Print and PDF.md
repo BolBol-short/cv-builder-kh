@@ -1,43 +1,29 @@
 ---
 type: reference
+updated: 2026-11-04
 ---
 
 # Print and PDF
 
-> **v1 note.** Describes the first version, still in `v1/src/` as the read-only reference for the rebuild. The current plan is in [[Plan]].
+## Pages
 
+`pagination/pageGeometry.js` holds the A4 numbers in screen pixels: 794 x 1123 px, first page content 1085 px (10 mm bottom margin), later pages 1040 px (12 mm top, 10 mm bottom).
 
-PDF export is the browser print dialog. There is no PDF library. "Download PDF" calls `window.print()`.
+`PagedDocument`:
+1. Draws the CV once, hidden, as one long sheet and measures every `data-block`.
+2. `findPageStarts()` (`paginate.js`, unit-tested) picks where each page starts: a block that would be cut moves to the next page, and a section title never stays alone at the bottom.
+3. Draws each page as a white A4 box showing only its slice of the sheet.
 
-User steps: choose "Save as PDF", paper size A4, turn off "Headers and footers".
+`Preview` shrinks the pages with CSS `zoom` to fit the screen.
 
-## Preview matches print
+## PDF download (`features/export/`)
 
-`Preview.jsx` renders the template at real A4 width (794 px) and scales it with `transform: scale(w / 794)` so it fits the column. A `ResizeObserver` re-measures the frame and the page.
+- Two taps on purpose: "Create PDF" draws the pages; then "Download PDF" (or "Share") is a fresh tap, which iPhone needs for downloads and the share sheet.
+- `capturePages.js` loads `html2canvas-pro` only then, draws one page at a time at 2x scale, and turns each into a JPEG. `jpegPdf.js` (our own, about 100 lines, tested) writes the PDF. A two-page CV is about 250 KB.
+- The PDF is pictures, so its text cannot be selected; Khmer is drawn by the browser, so it looks exactly as on screen.
+- Page pictures (JPEG) can be downloaded for chat apps. File name: `CV-<name>.pdf`.
+- Inside Facebook, Messenger or Telegram, `InAppBanner` asks the user to open the page in their normal browser.
 
-## Page-break markers
+## Verified
 
-```
-MM           = 96 / 25.4
-FIRST_PAGE_H = (297 - 10) * MM        page 1: bottom margin only
-NEXT_PAGE_H  = (297 - 12 - 10) * MM   later pages: top 12 mm + bottom 10 mm
-```
-
-`pageBreaks(height)` returns the y offsets where the printer starts a new page. They render as dashed rose lines with the page number.
-
-## Print CSS (`index.css`)
-
-- `@page { size: A4; margin: 12mm 0 10mm }` and `@page :first { margin: 0 0 10mm }`. Page 1 is full bleed so header bands and sidebars touch the edge. Later pages get a top margin.
-- `@media print`: hide `.no-print`, unscale `.paper-scale`, remove frame sizing, force `print-color-adjust: exact` on `.cv-page` so backgrounds survive.
-- `.cv-page h2 { break-after: avoid }` so a section heading never ends a page alone.
-
-## Keep in sync
-
-The numbers `12mm`, `10mm`, `297` appear in **both** `index.css` and `Preview.jsx`. Change one, change the other. `Page` in `shared.jsx` also hardcodes `min-h-[1085px]`, which is `(297 − 10) mm` in px.
-
-## Known limits
-
-- Untested: how the Modern and Professional sidebars behave once the CV runs onto page 2 (whether the colored column continues). Check in a real print preview before relying on it.
-- Output depends on the browser's print engine. Chrome and Edge are the safe targets.
-
-Related: [[Templates]], [[Gotchas and Backlog]].
+Desktop Chromium: English and Khmer PDFs correct. iPhone and Android: not yet (see [[Spike Results]]).

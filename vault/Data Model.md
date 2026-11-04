@@ -1,62 +1,42 @@
 ---
 type: reference
-source: v1/src/context/cvData.js, v1/src/utils/cvFile.js
+source: src/features/storage/schema.js
+updated: 2026-11-04
 ---
 
 # Data Model
 
-> **v1 note.** Describes the first version, still in `v1/src/` as the read-only reference for the rebuild. The current plan is in [[Plan]].
-
-
-## `emptyCV`
+One saved CV is a **document**:
 
 ```
-cv
-├─ personal
-│   ├─ photo          base64 JPEG data URL, or ""
-│   ├─ name, headline, tel, email, location, pob, nationality
-│   ├─ gender         code: female | male | other
-│   ├─ maritalStatus  code: single | married | divorced | widowed
-│   ├─ dob            YYYY-MM-DD
-│   ├─ hobbies        string[]
-│   ├─ links          string[]
-│   └─ languages      { id, language, level }[]   level: native|fluent|advanced|intermediate|basic, or free text
-├─ summary            string
-├─ skills             string[]
-├─ experience         { id, jobTitle, company, description, location, startDate, endDate, current }[]
-├─ education          { id, institution, degree, gpa, location, startDate, endDate, current }[]
-├─ certifications     { id, name, issuer, date }[]
-└─ references         { id, personName, position, companyName, link }[]
+document
+├─ schemaVersion   1
+├─ id, createdAt, updatedAt
+├─ settings
+│   ├─ cvLang       en | km           (language printed on the CV)
+│   ├─ template     traditional | classic | modern | professional | minimal | compact | timeline | elegant | centered | bold
+│   ├─ accentColor  "#rrggbb"         (the CV's own color)
+│   ├─ fontSize     small | normal | large
+│   └─ showPhoto    true | false
+└─ cv
+    ├─ personal     nameKm, nameLatin, headline, gender*, dateOfBirth, placeOfBirth,
+    │               nationality, maritalStatus*, phone, email, address, salaryExpectation
+    ├─ photo        square JPEG (400 px) as a data URL, shown as a circle; or ""
+    ├─ summary
+    ├─ experience   { id, jobTitle, company, location, startDate, endDate, current, description }[]
+    ├─ education    { id, institution, degree, gpa, location, startDate, endDate, current }[]
+    ├─ certifications { id, name, issuer, date }[]
+    ├─ languages    { id, language, level* }[]
+    ├─ references   { id, name, position, organization, contact }[]
+    └─ skills, hobbies, links   string[]
 ```
 
-- Dates in lists are `YYYY-MM`. `current: true` shows "Present" and disables `endDate`.
-- `description` is one bullet per line. `toBullets` strips leading `-`, `•`, `*`.
-- `id` comes from `makeId()` (`crypto.randomUUID` with a fallback).
-- Codes like `female` are stored, not labels. Labels come from the dictionary, so the same CV renders in either language. Free text still passes through via `optionLabel`.
+`*` stored as a code (`female`, `married`, `fluent`) and translated when shown; free text still works.
 
-## `settings`
+- Months are `YYYY-MM` (or just `YYYY`), date of birth is `YYYY-MM-DD`. `current: true` shows "Present".
+- `description` is one bullet per line.
+- `normalizeDocument()` repairs anything read back: missing fields get empty values, wrong types are reset, unknown fields are dropped, text is cut at 5,000 characters, lists at 50 items, the photo must be a `data:image/` URL. Tested in `storage.test.js`.
+- Rule: fields are only added. A later format change bumps `schemaVersion` and adds a repair step.
+- Backup file = the document plus `app: "cv-builder"`, as JSON. Opening one gives it a new id.
 
-```
-{ accentColor: "#rrggbb", template: "classic|modern|professional|minimal|traditional", cvLang: "en|km" }
-```
-
-Defaults: accent `#2563eb`, template `classic`, `cvLang` from `navigator.language` (`km…` → Khmer, else English).
-
-## Save-file contract ("the wrapper")
-
-```json
-{ "version": 1, "settings": { ... }, "cv": { ... } }
-```
-
-- Same wrapper is used for the JSON export and the localStorage draft.
-- `parseCVFile` also accepts a legacy bare CV (no `cv` key).
-- `normalizeCV` merges over `emptyCV` and coerces lists with `asArray`. Unknown or missing fields cannot crash the app. Rule: **`emptyCV` only gains fields, never loses or renames them.**
-- Old saves stored "Female" / "Married"; `asCode` lowercases them into codes.
-- `normalizeSettings` validates the accent against `/^#[0-9a-fA-F]{6}$/`, the template against `TEMPLATE_IDS`, and `cvLang` against `LANGS`.
-- Import errors throw `Error(<translation key>)`; the caller translates and alerts.
-
-## Completeness score
-
-`completeness(cv)` = share of 12 checks that are truthy: name, headline, photo, email, tel, location, summary, ≥1 experience, ≥1 education, ≥1 skill, ≥1 language, ≥1 reference. Rough guide, not validation.
-
-See [[Persistence]], [[Architecture]].
+See [[Persistence]].

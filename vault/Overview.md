@@ -1,51 +1,44 @@
 ---
 type: overview
+updated: 2026-11-04
 ---
 
 # Overview
 
-> **v1 note.** Describes the first version, still in `v1/src/` as the read-only reference for the rebuild. The current plan is in [[Plan]].
+**CV-Builder (Cambodia based)** is a free web app that only does one thing: help someone make their CV, the way Cambodian employers expect it, in Khmer or English, on a phone or a computer. Everything runs in the browser. No account, no server, no analytics.
 
+- Started: 2026-07-23. Rebuilt as version 2 in November 2026 (see [[Timeline]]).
+- Owner: BolBol (GitHub `BolBol-short/cv-builder`). Hosting: Vercel (static).
+- Status: built (Phases 0 to 5 of [[Build Plan]]). Waiting for real-phone tests and a beta (Phase 6).
+- The first version (v1) was deleted on 2026-11-04; it stays in git history (commit `62f39be`).
 
-**CV Builder (Cambodia based)** is a single-page React app where someone builds a personal work CV and exports it as a PDF. Everything runs in the browser.
+## Features
 
-## Why it exists
-
-From the README: some people have no time to write a CV, some do not know where to make one, and some need guidance on what to fill in. The app gives a guided form, one-click suggestions, and ready layouts, including the formal Cambodian "ប្រវត្តិរូបសង្ខេប" format.
-
-- Started: 2026-07-23
-- Owner: BolBol (GitHub `BolBol-short/cv-builder`)
-- Status: v1 is done and kept as the reference. A rebuild is planned in the main folder; see [[Plan]] and [[Build Plan]].
-
-## Features (v1)
-
-- English and Khmer interface. The CV language is a separate setting, so a Khmer-speaking user can write an English CV. See [[i18n and Khmer]].
-- Five templates: Classic, Modern, Professional, Minimal, Traditional. See [[Templates]].
-- Accent color: 9 presets plus a custom color picker.
-- Sections: personal details (photo, date and place of birth, nationality, marital status), summary, experience, education, certifications, skills, languages, hobbies, links, references.
-- One-click suggestion chips for skills, hobbies, languages. Reorder entries. "Currently work/study here" checkbox.
-- Live A4 preview that matches the printed PDF, with dashed page-break markers. See [[Print and PDF]].
-- Progress bar (completeness score).
-- Autosave to the browser, JSON save/open, "load example CV". See [[Persistence]].
-- Mobile layout: toggle between Edit and Preview below the `lg` breakpoint.
+- Start screen: new CV, saved CVs, open a backup file, try an example CV, clear everything.
+- Guided editor in nine steps (language and style, photo and name, contact and personal, summary, education, experience, skills and languages, references, review). Every field has a tip and an example.
+- App language (English / Khmer) separate from the CV language.
+- Ten templates, all with a circle profile photo. See [[Templates]].
+- Live A4 preview with clean page breaks. See [[Print and PDF]].
+- PDF download (two taps), share sheet, page pictures for chat apps. See [[Print and PDF]].
+- Autosave on the device, several CVs, backup files, example CV. See [[Persistence]].
+- Offline after the first visit, install help, update prompt, landing and privacy pages, "Report a problem" link.
 
 ## Stack
 
 | Layer | Choice |
 |---|---|
-| UI | React 19 (function components, hooks, plain `useState`) |
-| Build | Vite 8 with `@vitejs/plugin-react` |
-| Styling | Tailwind CSS 4 via `@tailwindcss/vite` (no config file; theme in `index.css`) |
-| Language | Plain JavaScript (JSX). `@types/react` is installed but there are no `.ts` files |
-| Lint | ESLint 10 flat config, react-hooks and react-refresh plugins |
-| Fonts | Inter (Latin), Kantumruy Pro (Khmer), Moul (Khmer title), loaded from Google Fonts |
-| Tests | None |
-| Backend | None |
-
-No state library, router, UI kit, or PDF library. PDF comes from the browser print dialog.
+| UI | React 19, plain JavaScript (JSX), no TypeScript |
+| Build | Vite 8, multi-page (landing, app, privacy, device test page) |
+| Styling | Tailwind CSS 4, three colors only: `ink` #1c1917, `paper` #ffffff, `accent` #1d4ed8; no gradients |
+| Storage | IndexedDB through `idb-keyval`; `localStorage` for small settings |
+| Fonts | Inter, Kantumruy Pro, Moul, self-hosted through Fontsource |
+| PDF | `html2canvas-pro` draws each page; our own `jpegPdf.js` writes the PDF |
+| Photo crop | `react-easy-crop` (loaded only when used) |
+| Offline | `vite-plugin-pwa` (Workbox) |
+| Tests | Vitest + Testing Library + axe-core; Playwright + @axe-core/playwright |
 
 ## Size
 
-About 2,600 lines across 30 source files under `v1/src/`.
+About 5,700 lines in 80 source files under `src/`, plus 11 unit test files and 6 browser test files. First download for the editor: 75 KB gzip.
 
-See also: [[Architecture]], [[File Map]].
+See also: [[Architecture]], [[File Map]], [[Data Model]].

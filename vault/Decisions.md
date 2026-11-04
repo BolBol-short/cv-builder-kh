@@ -6,6 +6,9 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### v1 deleted (2026-11-04)
+- The owner asked to delete `v1/` after version 2 was built. It stays in git history (last in commit `62f39be`). Vault notes were rewritten for version 2.
+
 ### Scope (2026-11-04)
 - CV-Builder only makes CVs. No cover letters, application forms, print-shop mode or other documents.
 - Users should be able to choose from many templates: 5 added (Compact one-page, Timeline, Elegant, Centered, Bold), 10 in total. All use the shared parts, so page splitting and both languages work the same way.
@@ -37,7 +40,7 @@ Short ADR-style log. Add new entries at the top.
 - Decision Court ruled on 7 dockets (see [[Solutions]]): canvas-to-image PDF download, download-first iPhone save with storage guidance, in-app browser banner, `data-block` pagination, full self-hosted fonts, real-device testing plus CI emulation, a Report-a-problem link plus beta follow-ups. Pending Phase 0 device tests.
 - Plain JavaScript and React, frontend only. No TypeScript (not learned yet), no Zod, no backend. Data shapes use JSDoc comments.
 - v1 had no users, so the rebuild has no backward compatibility and no importer or migration.
-- No v1/v2 split: one app in the main folder (`src/`). `v1/` stays as a read-only reference until the owner says to delete it.
+- No v1/v2 split: one app in the main folder (`src/`). `v1/` stayed as a read-only reference until it was deleted on 2026-11-04.
 - Export is a real PDF download with no server. Print-only (A1) stays dismissed.
 - Test devices: the owner has an iPhone only. Android is unverified until a borrowed phone or beta testers run the spike page.
 - Name stays CV-Builder; domain is the Vercel default for now.

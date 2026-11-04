@@ -1,34 +1,26 @@
 ---
 type: reference
+updated: 2026-11-04
 ---
 
 # Commands
 
-> **v1 note.** Describes the first version, still in `v1/src/` as the read-only reference for the rebuild. The current plan is in [[Plan]].
-
-
-Run from the repo root.
+Run from the project folder.
 
 ```
 npm install
-npm run dev       # Vite dev server
-npm run build     # production build into dist/
-npm run preview   # serve the build
-npm run lint      # ESLint (flat config, ignores dist)
+npm run dev        # development server, editor at http://localhost:5173/app.html
+npm run build      # production build into dist/
+npm run preview    # serve the build
+npm run lint       # ESLint
+npm test           # unit and component tests (Vitest)
+npm run e2e        # browser tests (Playwright); first time: npx playwright install chromium
+npm run check      # lint + tests + build + download-size check
+npm run format     # Prettier
 ```
 
-There is no test script.
+After changing a template's look: `npm run e2e -- --update-snapshots`.
 
-## Make a PDF
+## Git
 
-Click **Download PDF**, then in the print dialog: destination "Save as PDF", paper A4, headers and footers off. See [[Print and PDF]].
-
-## Common changes
-
-| Goal | Touch |
-|---|---|
-| Add a field to an existing list section | `context/cvData.js`, factory in `utils/cv.js`, descriptor in `ContentEditor.jsx`, labels in both dictionaries, templates that show it |
-| Add a template | See [[Templates]] |
-| Add a UI string | Both `en` and `km` in `translations.js` |
-| Add an accent preset | `ACCENT_PRESETS` in `constants/options.js` (lowercase hex) |
-| Change save format | Bump `version` in `cvFile.js` and migrate in `normalizeCV`. See [[Data Model]] |
+The builder commits each phase with `git add` and `git commit` only. The owner pushes.

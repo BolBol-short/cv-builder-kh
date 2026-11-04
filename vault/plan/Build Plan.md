@@ -20,7 +20,7 @@ Executable plan for rebuilding CV-Builder. It turns [[Plan]], [[Product]], [[CV 
 | 3 | Done | Ten templates on shared parts (5 more added 2026-11-04: Compact, Timeline, Elegant, Centered, Bold), page splitting, live preview, screenshot tests. Density setting skipped (font size only) |
 | 4 | Builder part done | Two-tap PDF export, share, page pictures, in-app banner, size check. Print button (P4-07) not added: T1 has not asked for it. **Owner:** device matrix (P4-09) |
 | 5 | Done | Offline app, install help, update prompt, landing and privacy pages, report link, axe and offline browser tests. Lighthouse (simulated slow phone): landing 100, editor 94 with LCP 2.5 s |
-| 6 | Waiting for owner | Beta, deploy, then remove `spikes/` and ask about deleting `v1/` |
+| 6 | Partly done | `v1/` deleted and vault rewritten (2026-11-04). **Owner:** deploy, phone tests, beta. Then remove `spikes/` and `html-to-image` |
 
 Checks on every commit: `npm run check` (lint, 59 unit tests, build, size) and `npm run e2e` (21 browser tests).
 
@@ -43,7 +43,7 @@ Checks on every commit: `npm run check` (lint, 59 unit tests, build, size) and `
 | Users | Cambodia, Khmer and English, mobile first (iPhone and Android), desktop too |
 | iPhone | The user must be able to save the PDF into the Files app like a normal download |
 | Owner | Solo, part-time, still learning JS and React. Prefer the smallest change that works. Explain new concepts in the report |
-| Git and v1 | **Never commit, push, branch, or tag.** The owner commits. `v1/` is a read-only reference: never edit, build, import from, or delete it unless the owner says so |
+| Git | **Never push or branch.** Commit each phase with `git add` and `git commit` only, no co-author line. The owner pushes. (`v1/` was deleted on 2026-11-04 at the owner's request.) |
 | Quality | WCAG 2.2 AA, 44 px touch targets, 16 px minimum input text, `lang` attributes, no `alert`/`confirm` |
 | Budget | Initial JS <= 200 KB gzip, lazy chunks <= 80 KB gzip, LCP <= 2.5 s on throttled mid-range Android (lab) |
 | Honesty | Report what was run and what was not. Never claim a device result you did not get |
@@ -51,7 +51,7 @@ Checks on every commit: `npm run check` (lint, 59 unit tests, build, size) and `
 
 ## 2. Target layout
 
-Build in the main folder (`src/`). There is no `v2/` folder. `v1/` stays beside it as a read-only reference until the owner says to delete it; the new app never imports from it. Root `index.html` points at `/v1/src/main.jsx` today and is repointed to `/src/main.jsx` in P0-02.
+Build in the main folder (`src/`). There is no `v2/` folder. `v1/` was the reference and was deleted on 2026-11-04 (in git history, commit `62f39be`).
 
 ```
 index.html                  app entry (repointed from v1 in P0-02)
@@ -243,7 +243,7 @@ Build behind an engine adapter so the PDF engine can change without touching the
 | P6-02 | Fix top issues; message five beta users and count replies after a week | Beta Log | Top issues closed |
 | P6-03 | Feature checklist (section 7) all ticked | [[Roadmap]] | Every box checked with a note |
 | P6-04 | Remove `spikes/` and test-only code; `npm run check` passes from a clean install; ask the owner whether to delete `v1/` (delete only on a yes) | repo | Passes |
-| P6-05 | Update `README.md` and the vault: [[Overview]], [[File Map]], [[Architecture]], [[Data Model]], [[Timeline]]; remove the "v1 note" banners where a note now describes the new code | vault | Notes match the code |
+| P6-05 | Update `README.md` and the vault: [[Overview]], [[File Map]], [[Architecture]], [[Data Model]], [[Timeline]]; remove the "v1 note" banners where a note now describes the new code | vault | Notes match the code (done 2026-11-04) |
 | P6-06 | **[OWNER]** Deploy to Vercel production; project name `cv-builder` (address `cv-builder.vercel.app` if free) | Vercel | Live; Lighthouse re-run |
 
 ## 5. Test plan

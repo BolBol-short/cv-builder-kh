@@ -7,7 +7,7 @@ tags: [rebuild, plan]
 
 # Rebuild Plan (hub)
 
-Rebuild CV Builder as an easy, accessible, mobile-first web app that produces Cambodian-style CVs. The first version (`v1/`) stays in place as a read-only reference. The rebuild happens in the main folder (`src/`), with no v2 folder.
+Rebuild CV Builder as an easy, accessible, mobile-first web app that produces Cambodian-style CVs. The first version (`v1/`) was used as the reference and deleted on 2026-11-04 (git history keeps it, commit `62f39be`). The app lives in the main folder (`src/`).
 
 Sub-notes: [[Product]] · [[CV Spec]] · [[Technical Design]] · [[Roadmap]]. Current state: [[Overview]], [[Gotchas and Backlog]].
 
@@ -66,7 +66,7 @@ These come from the senior-frontend checklist. Each must be confirmed or replace
 | D8 | Analytics | None. No Vercel Analytics, no Speed Insights, no third-party scripts | **Decided 2026-11-03** |
 | D9 | Name and domain | Name stays CV-Builder. Domain: Vercel default `cv-builder.vercel.app` if free; custom domain is optional later | **Decided 2026-11-03** (domain assumed) |
 | D10 | Khmer copy review | Owner accepted the Khmer copy as written. Beta users can still flag wording | **Closed 2026-11-03** |
-| D11 | Folder and versions | One app in the main folder (`src/`). `v1/` kept as a read-only reference until the owner says to delete it. No v2 folder | **Decided 2026-11-03** |
+| D11 | Folder and versions | One app in the main folder (`src/`). `v1/` deleted 2026-11-04 after the rebuild | **Done 2026-11-04** |
 | D12 | Export | A real PDF file download, no server (print-only and server rendering are out) | **Decided 2026-11-03** |
 | D13 | Test devices | Owner has an iPhone only. Android through a borrowed phone or beta testers | **Decided 2026-11-03** |
 
@@ -95,4 +95,4 @@ These come from the senior-frontend checklist. Each must be confirmed or replace
 
 ## Where the code lives
 
-One app, in the main folder (`src/`). `v1/` stays beside it as a read-only reference and is deleted only when the owner says so. The feature checklist in [[Roadmap]] says when the rebuild is complete.
+One app, in the main folder (`src/`). `v1/` was deleted on 2026-11-04; read it from git history if needed (`git show 62f39be:v1/src/<path>`).

@@ -61,7 +61,6 @@ src/
   locales/                 all English and Khmer text
 e2e/                       browser tests
 spikes/                    Phase 0 device test page (removed before launch)
-v1/                        the first version, kept as a read-only reference
 vault/                     project notes and the rebuild plan (open in Obsidian)
 ```
 

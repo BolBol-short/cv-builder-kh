@@ -1,35 +1,24 @@
 ---
 type: backlog
-verified: 2026-11-03 (by reading source; app was not run)
+updated: 2026-11-04
 ---
 
 # Gotchas and Backlog
 
-> **v1 note.** Describes the first version, still in `v1/src/` as the read-only reference for the rebuild. The current plan is in [[Plan]].
+## Open
 
+1. **Real phones not tested.** PDF to Files on iPhone, Khmer in the PDF on phones, Facebook/Telegram behavior and Android are unverified. See [[Spike Results]].
+2. **Editor load time** is 2.5 s on a simulated slow phone, right at the target.
+3. **Elegant template** uses the phone's own serif font for English letters, so it can look slightly different on Android.
+4. **Domain** `cv-builder.vercel.app` is assumed in the landing page, sitemap and preview image. Change it if Vercel gives another address.
+5. **PDF text is not selectable** (picture pages). Fine for sending and printing; recruiter software cannot read it.
+6. **Screenshot baselines** in `e2e/templates.spec.js-snapshots/` are made on Windows; on another system run `--update-snapshots` first.
+7. **`spikes/` and `html-to-image`** are only for Phase 0 tests; remove both before launch.
+8. **npm audit** warnings come from dev tools (ESLint dependencies), not from the app.
 
-## Found while reading
+## Ideas (only about making CVs)
 
-1. **Missing favicon.** `index.html` links `/favicon.svg`, but there is no `public/` folder, so the request 404s. Fix: add `public/favicon.svg` or remove the link.
-2. **Autosave message can lie.** "Auto-saved in this browser" always shows, even when `saveDraft` swallowed a quota error. A large photo plus long text could hit it. Fix idea: have `saveDraft` return a boolean and show a warning.
-3. **Reset keeps settings and the photo is lost with it.** Reset replaces `cv` only, which is probably intended, but there is no undo. Both reset and import overwrite without a backup.
-4. **Duplicate print constants.** Margins live in both `index.css` and `Preview.jsx`, and `1085px` is in `shared.jsx`. See [[Print and PDF]].
-5. **New template needs a `Thumb` body** in `DesignPanel.jsx`, easy to miss. See [[Templates]].
-6. **`context/cvData.js` is misnamed.** It holds the data shape, not a React context. Harmless, but confusing.
-7. **No tests.** Pure helpers (`normalizeCV`, `moveItem`, `formatRange`, `toBullets`, `pageBreaks`) are easy to cover with Vitest.
-8. **Sidebar templates and page 2 are untested.** Unknown whether the colored column continues on later pages. See [[Print and PDF]].
-9. **README is mixed.** It combines the original project brief with the feature list. The repo has no separate v2 plan file even though the last commit mentions one.
-10. **Not checked:** `npm run lint` and `npm run build` were not run for this vault. Accessibility, bundle size, and real print output were not measured. All source files were read; translation keys used by templates exist in both dictionaries, and every icon name used is defined in `Icon.jsx`.
-11. **`Icon` has no guard.** An unknown `name` renders an empty SVG silently.
+- More templates if users ask.
+- Section show/hide and reorder (not built; wait for beta feedback).
 
-## Ideas for v2 (candidates, not decided)
-
-- More templates; verify or fix sidebar behavior across pages.
-- Per-section show/hide and reorder of whole sections.
-- Multiple CVs saved in one browser (named drafts).
-- Drag and drop for list reordering instead of up/down buttons.
-- A Vitest suite for the utils, plus a print regression check.
-- Deploy as a static site (Vite output in `dist/`).
-- More templates. (Cover letters and other documents are out of scope: CV-Builder only makes CVs.)
-
-Related: [[Overview]], [[Decisions]].
+Out of scope: cover letters, application forms, other documents, accounts, analytics (see [[Decisions]]).

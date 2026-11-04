@@ -124,7 +124,7 @@ Everything stays JavaScript and React. TypeScript can be added later, file by fi
 
 ## Working rules
 
-- Work in the main folder (`src/`). `v1/` stays as a read-only reference; delete it only when the owner says.
+- Work in the main folder (`src/`). `v1/` was deleted on 2026-11-04 (git history keeps it).
 - Update the matching vault note in the same change as the code ([[00 Home]]).
 - Log decisions in [[Decisions]] with the reason.
 - Keep each phase shippable; cut scope before adding time.
