@@ -25,7 +25,9 @@ export function ExportPanel() {
   const [progress, setProgress] = useState({ done: 0, total: 0 })
   const [result, setResult] = useState(null) // { pdf, pictures, forDocument }
 
-  const baseName = `CV-${fileNameFrom(documentTitle(doc), 'CV')}`
+  // "CV-Sample-Name", or just "CV" when no name is filled in yet.
+  const personName = fileNameFrom(documentTitle(doc), '')
+  const baseName = personName ? `CV-${personName}` : 'CV'
   const pdfFile = result ? new File([result.pdf], `${baseName}.pdf`, { type: 'application/pdf' }) : null
   // A PDF made before the last edit is out of date.
   const isOutdated = result && result.forDocument !== doc

@@ -7,7 +7,8 @@ export function canShareFile(file) {
 /** Returns false if the user closed the share sheet without sharing. */
 export async function shareFile(file) {
   try {
-    await navigator.share({ files: [file], title: file.name })
+    // No title or text: iPhone would share them as a second item next to the PDF.
+    await navigator.share({ files: [file] })
     return true
   } catch (error) {
     if (error.name === 'AbortError') return false // the user cancelled: not an error

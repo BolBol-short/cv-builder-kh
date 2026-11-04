@@ -14,7 +14,7 @@ Executable plan for rebuilding CV-Builder. It turns [[Plan]], [[Product]], [[CV 
 
 | Phase | State | Notes |
 |---|---|---|
-| 0 | Builder part done | Test page at `/spikes/` (T0 to T8). **Owner:** deploy, run on iPhone, ask Android testers (P0-11, P0-12) |
+| 0 | Done (iPhone) | Owner ran T0 to T8 on iPhone iOS 18.6.2 (see [[Spike Results]]); fixes applied. Android still untested |
 | 1 | Done | Tooling, translations, data model, storage, UI kit, `vercel.json` |
 | 2 | Done | Nine guided steps, circle photo crop, start screen, autosave with last-saved time, backup |
 | 3 | Done | Ten templates on shared parts (5 more added 2026-11-04: Compact, Timeline, Elegant, Centered, Bold), page splitting, live preview, screenshot tests. Density setting skipped (font size only) |

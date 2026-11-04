@@ -6,6 +6,13 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### iPhone test results applied (2026-11-04)
+- Downloads are saved as `application/octet-stream`: iPhone Safari opens a `application/pdf` download in its viewer instead of saving it (T3 a No, b Yes). Shared code: `features/export/download.js`.
+- Share sheet gets only the file, no title: iPhone shared the title as an extra text item.
+- PDF file name is `CV.pdf` when no name is filled in (was `CV-CV.pdf`).
+- The in-app browser banner also shows on the start screen: downloads failed inside Messenger (T7).
+- Print-only route confirmed unusable on iPhone (T4). Storage stays IndexedDB (T5). 3-page export fine (T6).
+
 ### Live address and offline fix (2026-11-04)
 - Live at https://cv-builder-ebon-xi.vercel.app/ (landing page, sitemap and social preview updated).
 - Only the editor (`app.html`) is saved for offline use. The landing and privacy pages were removed from the offline cache: an old saved copy of the landing page kept asking for a deleted picture (404).

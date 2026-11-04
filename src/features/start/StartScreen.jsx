@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { AppHeader } from '../../app/AppHeader.jsx'
 import { ReportProblemLink } from '../../app/ReportProblemLink.jsx'
+import { InAppBanner } from '../export/InAppBanner.jsx'
 import { editPath, goTo } from '../../app/route.js'
 import { formatDate } from '../../shared/format/dates.js'
 import { useI18n } from '../../shared/i18n.js'
@@ -86,6 +87,9 @@ export function StartScreen({ onUiLang }) {
       <AppHeader onUiLang={onUiLang} />
 
       <main className="mx-auto max-w-xl px-4 py-10">
+        <div className="mb-8 empty:hidden">
+          <InAppBanner />
+        </div>
         <h1 className="text-3xl font-bold">{t('start.title')}</h1>
         <p className="mt-2 text-lg text-ink/70">{t('start.intro')}</p>
         <p className="mt-4 flex items-start gap-2 text-sm text-ink/70">
