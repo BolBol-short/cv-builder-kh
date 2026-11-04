@@ -6,6 +6,9 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Shrinking with transform, not zoom (2026-11-04)
+- Template pictures and the CV preview shrink with `transform: scale()`. With CSS `zoom`, iPhone Safari kept the text at a minimum size, so small template pictures showed only a few huge words (owner screenshot).
+
 ### iPhone test results applied (2026-11-04)
 - Downloads are saved as `application/octet-stream`: iPhone Safari opens a `application/pdf` download in its viewer instead of saving it (T3 a No, b Yes). Shared code: `features/export/download.js`.
 - Share sheet gets only the file, no title: iPhone shared the title as an extra text item.

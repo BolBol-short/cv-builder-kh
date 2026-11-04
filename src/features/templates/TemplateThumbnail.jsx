@@ -26,7 +26,8 @@ export function TemplateThumbnail({ templateId }) {
       className="pointer-events-none w-full overflow-hidden rounded border border-ink/15 bg-paper"
       style={{ height: PAGE_HEIGHT * scale }}
     >
-      <div style={{ zoom: scale }}>
+      {/* transform, not CSS zoom: iPhone Safari keeps zoomed text at a minimum size. */}
+      <div style={{ width: PAGE_WIDTH, transform: `scale(${scale})`, transformOrigin: 'top left' }}>
         <CvDocument doc={example} />
       </div>
     </div>
