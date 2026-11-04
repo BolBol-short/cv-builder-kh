@@ -3,7 +3,18 @@
 import { makeId } from '../../shared/ids.js'
 
 export const SCHEMA_VERSION = 1
-export const TEMPLATE_IDS = ['traditional', 'classic', 'modern', 'professional', 'minimal']
+export const TEMPLATE_IDS = [
+  'traditional',
+  'classic',
+  'modern',
+  'professional',
+  'minimal',
+  'compact',
+  'timeline',
+  'elegant',
+  'centered',
+  'bold',
+]
 export const DEFAULT_TEMPLATE = 'classic'
 export const DEFAULT_ACCENT = '#1d4ed8'
 export const FONT_SIZES = ['small', 'normal', 'large']

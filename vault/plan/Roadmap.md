@@ -106,7 +106,7 @@ Part of [[Plan]]. Sizes: S = a few days, M = 1 to 2 weeks, L = 2 to 4 weeks, at 
 
 ## After launch (backlog, not scheduled)
 
-Cover letter builder; job-application-form mode; one-page graduate template; print-shop mode; multiple CV versions per job; section templates by industry; more languages; text PDFs on phones through a client-side engine if S1 allows (no server).
+More templates (users should have many designs to choose from). Nothing outside making CVs: no cover letters, forms or other documents (owner decision 2026-11-04).
 
 ## Learning path (one new idea per phase)
 

@@ -30,6 +30,6 @@ verified: 2026-11-03 (by reading source; app was not run)
 - Drag and drop for list reordering instead of up/down buttons.
 - A Vitest suite for the utils, plus a print regression check.
 - Deploy as a static site (Vite output in `dist/`).
-- Cover letter or other document types.
+- More templates. (Cover letters and other documents are out of scope: CV-Builder only makes CVs.)
 
 Related: [[Overview]], [[Decisions]].

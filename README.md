@@ -11,7 +11,7 @@ A free, frontend-only web app for making a CV (Curriculum Vitae) the way Cambodi
 
 - Guided editor in nine steps, with a tip and a realistic example for every field.
 - English and Khmer app, and a separate CV language (a Khmer app can make an English CV).
-- Five designs, including the formal Cambodian "ប្រវត្តិរូបសង្ខេប" layout. The profile photo is always a circle.
+- Ten designs, including the formal Cambodian "ប្រវត្តិរូបសង្ខេប" layout. The profile photo is always a circle.
 - Live A4 preview with clean page breaks (no entry is cut in half).
 - PDF download that works on phones (on iPhone it goes to the Files app), plus page pictures for chat apps.
 - Saved automatically on the device, several CVs at once, backup files you can keep, an example CV.
@@ -53,7 +53,7 @@ src/
   App.jsx                  picks the language and the screen
   app/                     app shell: header, routing, CV state, save status, install and update prompts
   features/editor/         the guided steps, list fields, tips, example CV
-  features/templates/      the five CV designs and page splitting
+  features/templates/      the ten CV designs and page splitting
   features/export/         PDF and picture download, share, in-app browser warning
   features/storage/        data shape, saving on the device, backup files
   features/photo/          photo choose and circle crop

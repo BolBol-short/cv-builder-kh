@@ -6,6 +6,10 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Scope (2026-11-04)
+- CV-Builder only makes CVs. No cover letters, application forms, print-shop mode or other documents.
+- Users should be able to choose from many templates: 5 added (Compact one-page, Timeline, Elegant, Centered, Bold), 10 in total. All use the shared parts, so page splitting and both languages work the same way.
+
 ### Build notes, Phases 2 to 5 (2026-11-03)
 - PDF pictures are drawn with `html2canvas-pro`, not the original `html2canvas`: Tailwind 4 writes faded colors with `color-mix()`/`oklab()`, which the original cannot read. Checked in desktop Chromium: Khmer comes out correct. iPhone still to be tested (spike page T1).
 - Export is two taps on purpose ("Create PDF", then "Download PDF" / "Share"), so iPhone treats the save as a direct user action.

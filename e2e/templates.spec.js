@@ -4,8 +4,30 @@ import { expect, test } from '@playwright/test'
 import { chooseTemplate, openExample } from './helpers.js'
 
 const TEMPLATE_NAMES = {
-  en: ['Traditional', 'Classic', 'Modern', 'Professional', 'Minimal'],
-  km: ['ប្រពៃណី', 'បុរាណ', 'ទំនើប', 'វិជ្ជាជីវៈ', 'សាមញ្ញ'],
+  en: [
+    'Traditional',
+    'Classic',
+    'Modern',
+    'Professional',
+    'Minimal',
+    'Compact',
+    'Timeline',
+    'Elegant',
+    'Centered',
+    'Bold',
+  ],
+  km: [
+    'ប្រពៃណី',
+    'បុរាណ',
+    'ទំនើប',
+    'វិជ្ជាជីវៈ',
+    'សាមញ្ញ',
+    'បង្រួម',
+    'បន្ទាត់ពេលវេលា',
+    'ឆើតឆាយ',
+    'តម្រឹមកណ្ដាល',
+    'ដិតច្បាស់',
+  ],
 }
 
 for (const lang of ['en', 'km']) {

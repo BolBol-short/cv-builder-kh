@@ -112,6 +112,11 @@ const km = {
   'template.modern': 'ទំនើប',
   'template.professional': 'វិជ្ជាជីវៈ',
   'template.minimal': 'សាមញ្ញ',
+  'template.compact': 'បង្រួម',
+  'template.timeline': 'បន្ទាត់ពេលវេលា',
+  'template.elegant': 'ឆើតឆាយ',
+  'template.centered': 'តម្រឹមកណ្ដាល',
+  'template.bold': 'ដិតច្បាស់',
 
   'section.personal': 'ព័ត៌មានផ្ទាល់ខ្លួន',
   'section.summary': 'សេចក្ដីសង្ខេបអំពីខ្លួន',

@@ -120,6 +120,11 @@ const en = {
   'template.modern': 'Modern',
   'template.professional': 'Professional',
   'template.minimal': 'Minimal',
+  'template.compact': 'Compact',
+  'template.timeline': 'Timeline',
+  'template.elegant': 'Elegant',
+  'template.centered': 'Centered',
+  'template.bold': 'Bold',
 
   // Headings printed on the CV
   'section.personal': 'Personal details',

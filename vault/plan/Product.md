@@ -60,13 +60,10 @@ Same steps, but two panes: editor on the left, live A4 preview on the right, a s
 - Backup-file reminder and a "Report a problem" link (with no analytics, this is how problems reach you)
 
 **Could**
-- Cover letter ("លិខិតស្នើសុំការងារ") builder
-- Job-application-form mode that mimics bank/NGO forms
-- One-page graduate template
-- Print-shop mode (A4 PDF, no colors, high contrast)
-- Spell-check hints for English
+- More templates (owner, 2026-11-04: users should have many designs to choose from)
 
-**Won't (for now)**
+**Won't** (owner, 2026-11-04: CV-Builder only makes CVs)
+- Cover letters or other documents, job-application-form mode, print-shop mode, spell-check
 - Accounts, cloud sync, AI writing, job matching, payments
 
 ## Mobile UX rules

@@ -17,7 +17,7 @@ Executable plan for rebuilding CV-Builder. It turns [[Plan]], [[Product]], [[CV 
 | 0 | Builder part done | Test page at `/spikes/` (T0 to T8). **Owner:** deploy, run on iPhone, ask Android testers (P0-11, P0-12) |
 | 1 | Done | Tooling, translations, data model, storage, UI kit, `vercel.json` |
 | 2 | Done | Nine guided steps, circle photo crop, start screen, autosave with last-saved time, backup |
-| 3 | Done | Five templates on shared parts, page splitting, live preview, screenshot tests. Density setting skipped (font size only) |
+| 3 | Done | Ten templates on shared parts (5 more added 2026-11-04: Compact, Timeline, Elegant, Centered, Bold), page splitting, live preview, screenshot tests. Density setting skipped (font size only) |
 | 4 | Builder part done | Two-tap PDF export, share, page pictures, in-app banner, size check. Print button (P4-07) not added: T1 has not asked for it. **Owner:** device matrix (P4-09) |
 | 5 | Done | Offline app, install help, update prompt, landing and privacy pages, report link, axe and offline browser tests. Lighthouse (simulated slow phone): landing 100, editor 94 with LCP 2.5 s |
 | 6 | Waiting for owner | Beta, deploy, then remove `spikes/` and ask about deleting `v1/` |
@@ -283,7 +283,7 @@ From [[Roadmap]], plus the court's conditions:
 - [x] "Currently here" on jobs and study
 - [x] Suggestion chips; reorder; delete with undo
 - [x] Photo upload with a circle crop, shown as a circle on every template
-- [x] Five templates (or an approved reduction recorded in [[Decisions]])
+- [x] Ten templates (owner asked for many designs, 2026-11-04)
 - [x] Accent presets and custom color; page-break markers in preview
 - [x] Autosave with honest status; backup export/import; example CV; clear all
 - [x] Progress or gap indicator
