@@ -16,7 +16,7 @@ function Demo() {
     <main>
       <h1>Kit</h1>
       <StepProgress current={2} total={9} />
-      <TextField label="Name" tip="Your full name." example="Sok Dara" value={name} onChange={setName} />
+      <TextField label="Name" tip="Your full name." example="Sample Name" value={name} onChange={setName} />
       <TextAreaField label="Summary" value="" onChange={() => {}} />
       <SelectField label="Gender" value={gender} onChange={setGender} options={[{ value: 'male', label: 'Male' }]} />
       <MonthYearField label="Start" value={month} onChange={setMonth} />
@@ -35,10 +35,10 @@ describe('UI kit', () => {
     expect(input.getAttribute('aria-describedby')).toBeTruthy()
     const hint = document.getElementById(input.getAttribute('aria-describedby'))
     expect(hint.textContent).toContain('Your full name.')
-    expect(hint.textContent).toContain('Example: Sok Dara')
+    expect(hint.textContent).toContain('Example: Sample Name')
 
-    await userEvent.type(input, 'Sok')
-    expect(input.value).toBe('Sok')
+    await userEvent.type(input, 'Sam')
+    expect(input.value).toBe('Sam')
   })
 
   it('stores a month as YYYY-MM only when month and year are chosen', async () => {

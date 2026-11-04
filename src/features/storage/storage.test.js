@@ -20,8 +20,8 @@ describe('normalizeDocument', () => {
   })
 
   it('fills in missing parts', () => {
-    const doc = normalizeDocument({ cv: { personal: { nameLatin: 'Sok Dara' } } })
-    expect(doc.cv.personal.nameLatin).toBe('Sok Dara')
+    const doc = normalizeDocument({ cv: { personal: { nameLatin: 'Sample Name' } } })
+    expect(doc.cv.personal.nameLatin).toBe('Sample Name')
     expect(doc.cv.personal.phone).toBe('')
     expect(doc.cv.experience).toEqual([])
     expect(doc.settings.template).toBe('classic')
@@ -59,22 +59,22 @@ describe('normalizeDocument', () => {
 
   it('uses the Latin name, then the Khmer name, as the title', () => {
     const doc = emptyDocument()
-    doc.cv.personal.nameKm = 'សុខ ដារា'
-    expect(documentTitle(doc)).toBe('សុខ ដារា')
-    doc.cv.personal.nameLatin = 'Sok Dara'
-    expect(documentTitle(doc)).toBe('Sok Dara')
+    doc.cv.personal.nameKm = 'ឈ្មោះ គំរូ'
+    expect(documentTitle(doc)).toBe('ឈ្មោះ គំរូ')
+    doc.cv.personal.nameLatin = 'Sample Name'
+    expect(documentTitle(doc)).toBe('Sample Name')
   })
 })
 
 describe('backup files', () => {
   it('round-trips a document with a new id', async () => {
     const doc = emptyDocument()
-    doc.cv.personal.nameLatin = 'Sok Dara'
+    doc.cv.personal.nameLatin = 'Sample Name'
     const text = await makeBackupBlob(doc).text()
     const restored = parseBackup(text)
-    expect(restored.cv.personal.nameLatin).toBe('Sok Dara')
+    expect(restored.cv.personal.nameLatin).toBe('Sample Name')
     expect(restored.id).not.toBe(doc.id)
-    expect(backupFileName(doc)).toBe('CV-Sok-Dara.json')
+    expect(backupFileName(doc)).toBe('CV-Sample-Name.json')
   })
 
   it('rejects files that are not ours', () => {

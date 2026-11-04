@@ -14,6 +14,6 @@ describe('Report a problem link', () => {
     expect(href).toContain('App version: 2.0.0')
     expect(href).toContain('Template: modern')
     // The link component never receives CV data, so names, phones or emails cannot leak into it.
-    expect(href).not.toMatch(/@|Sok Dara|\+855/)
+    expect(href).not.toMatch(/@|Sample Name|\+855/)
   })
 })

@@ -18,7 +18,7 @@ test('download a backup file and open it again', async ({ page }, testInfo) => {
     page.waitForEvent('download'),
     page.getByRole('button', { name: 'Download backup file' }).first().click(),
   ])
-  expect(download.suggestedFilename()).toBe('CV-Sok-Dara.json')
+  expect(download.suggestedFilename()).toBe('CV-Sample-Name.json')
   const backupPath = testInfo.outputPath('backup.json')
   await download.saveAs(backupPath)
 
@@ -27,5 +27,5 @@ test('download a backup file and open it again', async ({ page }, testInfo) => {
   await page.waitForURL(/#\/edit\/.+\/review$/)
   await page.goto('/app.html')
   // The example and the opened backup are now two saved CVs with the same name.
-  await expect(page.getByRole('link', { name: /Sok Dara/ })).toHaveCount(2)
+  await expect(page.getByRole('link', { name: /Sample Name/ })).toHaveCount(2)
 })

@@ -9,10 +9,10 @@ describe('documentReducer', () => {
   it('changes settings, personal fields and plain fields', () => {
     let doc = emptyDocument()
     doc = documentReducer(doc, { type: 'setSetting', field: 'template', value: 'modern' })
-    doc = documentReducer(doc, { type: 'setPersonal', field: 'nameLatin', value: 'Sok Dara' })
+    doc = documentReducer(doc, { type: 'setPersonal', field: 'nameLatin', value: 'Sample Name' })
     doc = documentReducer(doc, { type: 'setCvField', field: 'summary', value: 'Hello' })
     expect(doc.settings.template).toBe('modern')
-    expect(doc.cv.personal.nameLatin).toBe('Sok Dara')
+    expect(doc.cv.personal.nameLatin).toBe('Sample Name')
     expect(doc.cv.summary).toBe('Hello')
   })
 

@@ -1,4 +1,5 @@
 // An example CV, in English or Khmer, for "Try an example CV".
+// Every name, company, school and number here is made up for the example.
 import { emptyDocument } from '../storage/schema.js'
 import { makeId } from '../../shared/ids.js'
 
@@ -11,17 +12,17 @@ export function sampleDocument(lang) {
 function sampleEnglish() {
   return {
     personal: {
-      nameKm: 'សុខ ដារា',
-      nameLatin: 'Sok Dara',
+      nameKm: 'ឈ្មោះ គំរូ',
+      nameLatin: 'Sample Name',
       headline: 'Accountant',
       gender: 'male',
       dateOfBirth: '1998-04-14',
-      placeOfBirth: 'Kampong Cham',
+      placeOfBirth: 'Phnom Penh',
       nationality: 'Cambodian',
       maritalStatus: 'single',
-      phone: '012 345 678',
-      email: 'sok.dara@example.com',
-      address: 'Sen Sok, Phnom Penh',
+      phone: '012 000 000',
+      email: 'name@example.com',
+      address: 'Phnom Penh',
       salaryExpectation: '',
     },
     photo: '',
@@ -31,7 +32,7 @@ function sampleEnglish() {
       {
         id: makeId(),
         jobTitle: 'Accountant',
-        company: 'ABC Trading Co., Ltd.',
+        company: 'Sample Trading Co., Ltd.',
         location: 'Phnom Penh',
         startDate: '2023-01',
         endDate: '',
@@ -42,18 +43,18 @@ function sampleEnglish() {
       {
         id: makeId(),
         jobTitle: 'Junior Accountant',
-        company: 'Mekong Services',
+        company: 'Example Services Co., Ltd.',
         location: 'Phnom Penh',
         startDate: '2021-06',
         endDate: '2022-12',
         current: false,
-        description: 'Recorded daily transactions in QuickBooks\nPrepared invoices and payment vouchers',
+        description: 'Recorded daily transactions in accounting software\nPrepared invoices and payment vouchers',
       },
     ],
     education: [
       {
         id: makeId(),
-        institution: 'National University of Management',
+        institution: 'Sample University',
         degree: 'Bachelor of Accounting',
         gpa: '3.5',
         location: 'Phnom Penh',
@@ -62,7 +63,9 @@ function sampleEnglish() {
         current: false,
       },
     ],
-    certifications: [{ id: makeId(), name: 'QuickBooks Certification', issuer: 'Intuit', date: '2022-03' }],
+    certifications: [
+      { id: makeId(), name: 'Bookkeeping Certificate', issuer: 'Sample Training Center', date: '2022-03' },
+    ],
     languages: [
       { id: makeId(), language: 'Khmer', level: 'native' },
       { id: makeId(), language: 'English', level: 'fluent' },
@@ -71,39 +74,39 @@ function sampleEnglish() {
     references: [
       {
         id: makeId(),
-        name: 'Chan Sophea',
+        name: 'Sample Reference One',
         position: 'Finance Manager',
-        organization: 'ABC Trading Co., Ltd.',
-        contact: '011 222 333',
+        organization: 'Sample Trading Co., Ltd.',
+        contact: '011 000 000',
       },
       {
         id: makeId(),
-        name: 'Lim Vuthy',
+        name: 'Sample Reference Two',
         position: 'Senior Lecturer',
-        organization: 'National University of Management',
-        contact: '017 888 999',
+        organization: 'Sample University',
+        contact: '017 000 000',
       },
     ],
-    skills: ['Microsoft Excel', 'QuickBooks', 'Tax Filing', 'Financial Reporting', 'Teamwork'],
+    skills: ['Microsoft Excel', 'Bookkeeping', 'Tax Filing', 'Financial Reporting', 'Teamwork'],
     hobbies: ['Reading', 'Football', 'Travelling'],
-    links: ['linkedin.com/in/sokdara'],
+    links: ['linkedin.com/in/sample-name'],
   }
 }
 
 function sampleKhmer() {
   return {
     personal: {
-      nameKm: 'សុខ ដារា',
-      nameLatin: 'Sok Dara',
+      nameKm: 'ឈ្មោះ គំរូ',
+      nameLatin: 'Sample Name',
       headline: 'គណនេយ្យករ',
       gender: 'male',
       dateOfBirth: '1998-04-14',
-      placeOfBirth: 'ខេត្តកំពង់ចាម',
+      placeOfBirth: 'រាជធានីភ្នំពេញ',
       nationality: 'ខ្មែរ',
       maritalStatus: 'single',
-      phone: '012 345 678',
-      email: 'sok.dara@example.com',
-      address: 'ខណ្ឌសែនសុខ រាជធានីភ្នំពេញ',
+      phone: '012 000 000',
+      email: 'name@example.com',
+      address: 'រាជធានីភ្នំពេញ',
       salaryExpectation: '',
     },
     photo: '',
@@ -113,7 +116,7 @@ function sampleKhmer() {
       {
         id: makeId(),
         jobTitle: 'គណនេយ្យករ',
-        company: 'ក្រុមហ៊ុន ABC Trading',
+        company: 'ក្រុមហ៊ុន ពាណិជ្ជកម្មគំរូ',
         location: 'ភ្នំពេញ',
         startDate: '2023-01',
         endDate: '',
@@ -124,18 +127,18 @@ function sampleKhmer() {
       {
         id: makeId(),
         jobTitle: 'ជំនួយការគណនេយ្យ',
-        company: 'ក្រុមហ៊ុន Mekong Services',
+        company: 'ក្រុមហ៊ុន សេវាកម្មឧទាហរណ៍',
         location: 'ភ្នំពេញ',
         startDate: '2021-06',
         endDate: '2022-12',
         current: false,
-        description: 'កត់ត្រាប្រតិបត្តិការប្រចាំថ្ងៃក្នុង QuickBooks\nរៀបចំវិក្កយបត្រ និងប័ណ្ណទូទាត់',
+        description: 'កត់ត្រាប្រតិបត្តិការប្រចាំថ្ងៃក្នុងកម្មវិធីគណនេយ្យ\nរៀបចំវិក្កយបត្រ និងប័ណ្ណទូទាត់',
       },
     ],
     education: [
       {
         id: makeId(),
-        institution: 'សាកលវិទ្យាល័យជាតិគ្រប់គ្រង',
+        institution: 'សាកលវិទ្យាល័យគំរូ',
         degree: 'បរិញ្ញាបត្រគណនេយ្យ',
         gpa: '3.5',
         location: 'ភ្នំពេញ',
@@ -144,7 +147,9 @@ function sampleKhmer() {
         current: false,
       },
     ],
-    certifications: [{ id: makeId(), name: 'វិញ្ញាបនបត្រ QuickBooks', issuer: 'Intuit', date: '2022-03' }],
+    certifications: [
+      { id: makeId(), name: 'វិញ្ញាបនបត្រកត់ត្រាបញ្ជី', issuer: 'មជ្ឈមណ្ឌលបណ្ដុះបណ្ដាលគំរូ', date: '2022-03' },
+    ],
     languages: [
       { id: makeId(), language: 'ខ្មែរ', level: 'native' },
       { id: makeId(), language: 'អង់គ្លេស', level: 'fluent' },
@@ -153,21 +158,21 @@ function sampleKhmer() {
     references: [
       {
         id: makeId(),
-        name: 'ចាន់ សោភា',
+        name: 'អ្នកយោងគំរូ ទី១',
         position: 'ប្រធានផ្នែកហិរញ្ញវត្ថុ',
-        organization: 'ក្រុមហ៊ុន ABC Trading',
-        contact: '011 222 333',
+        organization: 'ក្រុមហ៊ុន ពាណិជ្ជកម្មគំរូ',
+        contact: '011 000 000',
       },
       {
         id: makeId(),
-        name: 'លឹម វុទ្ធី',
+        name: 'អ្នកយោងគំរូ ទី២',
         position: 'សាស្ត្រាចារ្យ',
-        organization: 'សាកលវិទ្យាល័យជាតិគ្រប់គ្រង',
-        contact: '017 888 999',
+        organization: 'សាកលវិទ្យាល័យគំរូ',
+        contact: '017 000 000',
       },
     ],
-    skills: ['Microsoft Excel', 'QuickBooks', 'ការប្រកាសពន្ធ', 'របាយការណ៍ហិរញ្ញវត្ថុ', 'ការងារជាក្រុម'],
+    skills: ['Microsoft Excel', 'ការកត់ត្រាបញ្ជី', 'ការប្រកាសពន្ធ', 'របាយការណ៍ហិរញ្ញវត្ថុ', 'ការងារជាក្រុម'],
     hobbies: ['អានសៀវភៅ', 'បាល់ទាត់', 'ធ្វើដំណើរកម្សាន្ត'],
-    links: ['linkedin.com/in/sokdara'],
+    links: ['linkedin.com/in/sample-name'],
   }
 }

@@ -39,8 +39,8 @@ describe('text', () => {
   })
 
   it('makes safe file names', () => {
-    expect(fileNameFrom('Sok  Dara', 'cv')).toBe('Sok-Dara')
-    expect(fileNameFrom('សុខ ដារា', 'cv')).toBe('សុខ-ដារា')
+    expect(fileNameFrom('Sample  Name', 'cv')).toBe('Sample-Name')
+    expect(fileNameFrom('ឈ្មោះ គំរូ', 'cv')).toBe('ឈ្មោះ-គំរូ')
     expect(fileNameFrom('a/b:c', 'cv')).toBe('abc')
     expect(fileNameFrom('', 'cv')).toBe('cv')
   })

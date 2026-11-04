@@ -6,6 +6,10 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Example data is made up (2026-11-04)
+- The example CV, field examples and tests use invented data only: "Sample Name" / "ឈ្មោះ គំរូ", "Sample Trading Co., Ltd.", "Sample University", `example.com` emails, phone numbers of zeros. No real people, companies or schools.
+- Landing page shows two example CVs and a gallery of all 10 designs (pictures in `public/designs/`, not saved for offline use).
+
 ### v1 deleted (2026-11-04)
 - The owner asked to delete `v1/` after version 2 was built. It stays in git history (last in commit `62f39be`). Vault notes were rewritten for version 2.
 

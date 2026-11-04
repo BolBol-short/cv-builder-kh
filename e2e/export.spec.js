@@ -9,7 +9,7 @@ test('downloads a PDF of the example CV', async ({ page }) => {
   await expect(downloadButton).toBeVisible({ timeout: 30_000 })
 
   const [download] = await Promise.all([page.waitForEvent('download'), downloadButton.click()])
-  expect(download.suggestedFilename()).toBe('CV-Sok-Dara.pdf')
+  expect(download.suggestedFilename()).toBe('CV-Sample-Name.pdf')
 
   const stream = await download.createReadStream()
   const chunks = []

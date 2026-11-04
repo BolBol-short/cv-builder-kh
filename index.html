@@ -37,7 +37,19 @@
       @media (min-width: 48rem) { .hero { grid-template-columns: 1.1fr 1fr; padding: 4rem 0; } }
       h1 { font-size: clamp(1.9rem, 6vw, 2.8rem); line-height: 1.3; margin: 0 0 0.75rem; }
       .lead { font-size: 1.15rem; color: rgb(28 25 23 / 0.75); margin: 0 0 1.5rem; }
-      .example { width: 100%; max-width: 26rem; justify-self: center; border-radius: 0.5rem; box-shadow: 0 2px 16px rgb(28 25 23 / 0.2); }
+      /* Two example CVs, one behind the other, slightly turned. */
+      .showcase { position: relative; justify-self: center; width: min(100%, 36rem); aspect-ratio: 1 / 1.2; }
+      .showcase img { position: absolute; width: 74%; height: auto; border-radius: 0.5rem; background: var(--paper);
+                      box-shadow: 0 6px 28px rgb(28 25 23 / 0.22); }
+      .showcase .back { top: 0; left: 0; transform: rotate(-5deg); }
+      .showcase .front { bottom: 0; right: 0; transform: rotate(3deg); }
+      .designs { padding: 0 0 3rem; }
+      .designs h2 { font-size: 1.4rem; margin: 0 0 0.25rem; }
+      .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; list-style: none; padding: 0; margin: 1.25rem 0 0; }
+      @media (min-width: 40rem) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+      @media (min-width: 56rem) { .gallery { grid-template-columns: repeat(5, 1fr); } }
+      .gallery img { width: 100%; height: auto; display: block; border-radius: 0.4rem; border: 1px solid rgb(28 25 23 / 0.15); }
+      .gallery p { margin: 0.4rem 0 0; font-size: 0.95rem; text-align: center; }
       .note { font-size: 0.95rem; color: rgb(28 25 23 / 0.7); }
       .features { display: grid; gap: 1rem; padding: 0 0 3rem; list-style: none; margin: 0; }
       @media (min-width: 48rem) { .features { grid-template-columns: repeat(2, 1fr); } }
@@ -74,7 +86,56 @@
             <span class="en" lang="en">No account. Your CV stays on your phone.</span>
           </p>
         </div>
-        <img class="example" src="/example-cv-km.jpg" width="600" height="848" alt="ឧទាហរណ៍ CV ជាភាសាខ្មែរ (Example CV in Khmer)" />
+        <div class="showcase">
+          <img class="back" src="/example-cv-back.jpg" width="900" height="1273" alt="ឧទាហរណ៍ CV ទម្រង់ប្រពៃណី (Example CV, Traditional design)" />
+          <img class="front" fetchpriority="high" src="/example-cv-front.jpg" width="900" height="1273" alt="ឧទាហរណ៍ CV ទម្រង់ទំនើប (Example CV, Modern design)" />
+        </div>
+      </section>
+
+      <section class="designs">
+        <h2>រចនាប័ទ្ម ១០ ដើម្បីជ្រើសរើស <span class="en" lang="en">10 designs to choose from</span></h2>
+        <ul class="gallery">
+          <li>
+            <img src="/designs/traditional.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>ប្រពៃណី <span lang="en">· Traditional</span></p>
+          </li>
+          <li>
+            <img src="/designs/classic.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>បុរាណ <span lang="en">· Classic</span></p>
+          </li>
+          <li>
+            <img src="/designs/modern.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>ទំនើប <span lang="en">· Modern</span></p>
+          </li>
+          <li>
+            <img src="/designs/professional.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>វិជ្ជាជីវៈ <span lang="en">· Professional</span></p>
+          </li>
+          <li>
+            <img src="/designs/minimal.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>សាមញ្ញ <span lang="en">· Minimal</span></p>
+          </li>
+          <li>
+            <img src="/designs/compact.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>បង្រួម <span lang="en">· Compact</span></p>
+          </li>
+          <li>
+            <img src="/designs/timeline.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>បន្ទាត់ពេលវេលា <span lang="en">· Timeline</span></p>
+          </li>
+          <li>
+            <img src="/designs/elegant.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>ឆើតឆាយ <span lang="en">· Elegant</span></p>
+          </li>
+          <li>
+            <img src="/designs/centered.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>តម្រឹមកណ្ដាល <span lang="en">· Centered</span></p>
+          </li>
+          <li>
+            <img src="/designs/bold.jpg" width="360" height="509" loading="lazy" alt="" />
+            <p>ដិតច្បាស់ <span lang="en">· Bold</span></p>
+          </li>
+        </ul>
       </section>
 
       <ul class="features">

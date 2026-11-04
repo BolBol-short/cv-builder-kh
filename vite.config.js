@@ -35,7 +35,7 @@ export default defineConfig({
       workbox: {
         // Save the app, its pictures and only the Latin and Khmer font files for offline use.
         globPatterns: ['**/*.{js,css,html,svg,png,jpg}', 'assets/*-latin-*.woff2', 'assets/*-khmer-*.woff2'],
-        globIgnores: ['spikes/**', 'assets/spikes-*', '**/*latin-ext*', 'og-image.jpg', 'example-cv*.jpg'],
+        globIgnores: ['spikes/**', 'assets/spikes-*', '**/*latin-ext*', 'og-image.jpg', 'example-cv*.jpg', 'designs/**'],
         navigateFallback: '/app.html',
         navigateFallbackAllowlist: [/^\/app/], // only the editor; the landing page stays a normal page
       },

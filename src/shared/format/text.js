@@ -9,7 +9,7 @@ export function toBullets(text) {
     .filter(Boolean)
 }
 
-// Safe file name from a person's name: "Sok Dara" -> "Sok-Dara".
+// Safe file name from a person's name: "Sample Name" -> "Sample-Name".
 // Khmer letters are kept; characters that phones do not allow in file names are removed.
 export function fileNameFrom(text, fallback) {
   const cleaned = (text ?? '')
