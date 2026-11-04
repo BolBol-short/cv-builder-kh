@@ -6,6 +6,10 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Live address and offline fix (2026-11-04)
+- Live at https://cv-builder-ebon-xi.vercel.app/ (landing page, sitemap and social preview updated).
+- Only the editor (`app.html`) is saved for offline use. The landing and privacy pages were removed from the offline cache: an old saved copy of the landing page kept asking for a deleted picture (404).
+
 ### Browser tests removed (2026-11-04)
 - The owner asked to delete `e2e/` (Playwright). Unit tests (`npm test`, including axe accessibility checks) stay. PDF, photo, offline and template looks are now checked by hand.
 

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /spikes/
 
-Sitemap: https://cv-builder.vercel.app/sitemap.xml
+Sitemap: https://cv-builder-ebon-xi.vercel.app/sitemap.xml

@@ -35,7 +35,18 @@ export default defineConfig({
       workbox: {
         // Save the app, its pictures and only the Latin and Khmer font files for offline use.
         globPatterns: ['**/*.{js,css,html,svg,png,jpg}', 'assets/*-latin-*.woff2', 'assets/*-khmer-*.woff2'],
-        globIgnores: ['spikes/**', 'assets/spikes-*', '**/*latin-ext*', 'og-image.jpg', 'example-cv*.jpg', 'designs/**'],
+        // The landing and privacy pages are not saved: they must always come fresh from the server,
+        // otherwise an old copy keeps asking for pictures that no longer exist.
+        globIgnores: [
+          'index.html',
+          'privacy.html',
+          'spikes/**',
+          'assets/spikes-*',
+          '**/*latin-ext*',
+          'og-image.jpg',
+          'example-cv*.jpg',
+          'designs/**',
+        ],
         navigateFallback: '/app.html',
         navigateFallbackAllowlist: [/^\/app/], // only the editor; the landing page stays a normal page
       },

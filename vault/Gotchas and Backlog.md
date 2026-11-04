@@ -10,7 +10,7 @@ updated: 2026-11-04
 1. **Real phones not tested.** PDF to Files on iPhone, Khmer in the PDF on phones, Facebook/Telegram behavior and Android are unverified. See [[Spike Results]].
 2. **Editor load time** is 2.5 s on a simulated slow phone, right at the target.
 3. **Elegant template** uses the phone's own serif font for English letters, so it can look slightly different on Android.
-4. **Domain** `cv-builder.vercel.app` is assumed in the landing page, sitemap and preview image. Change it if Vercel gives another address.
+4. **Domain** is `cv-builder-ebon-xi.vercel.app` (set 2026-11-04). If it changes, update `index.html`, `public/robots.txt` and `public/sitemap.xml`.
 5. **PDF text is not selectable** (picture pages). Fine for sending and printing; recruiter software cannot read it.
 6. **No browser tests.** The `e2e/` browser tests were removed on 2026-11-04 at the owner's request. Check the PDF download, photo crop, offline mode and templates by hand after big changes.
 7. **`spikes/` and `html-to-image`** are only for Phase 0 tests; remove both before launch.

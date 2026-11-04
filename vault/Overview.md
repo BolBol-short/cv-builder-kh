@@ -8,7 +8,7 @@ updated: 2026-11-04
 **CV-Builder (Cambodia based)** is a free web app that only does one thing: help someone make their CV, the way Cambodian employers expect it, in Khmer or English, on a phone or a computer. Everything runs in the browser. No account, no server, no analytics.
 
 - Started: 2026-07-23. Rebuilt as version 2 in November 2026 (see [[Timeline]]).
-- Owner: BolBol (GitHub `BolBol-short/cv-builder`). Hosting: Vercel (static).
+- Owner: BolBol (GitHub `BolBol-short/cv-builder`). Hosting: Vercel, https://cv-builder-ebon-xi.vercel.app/
 - Status: built (Phases 0 to 5 of [[Build Plan]]). Waiting for real-phone tests and a beta (Phase 6).
 - The first version (v1) was deleted on 2026-11-04; it stays in git history (commit `62f39be`).
 
