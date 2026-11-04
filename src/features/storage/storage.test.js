@@ -34,7 +34,7 @@ describe('normalizeDocument', () => {
         summary: 42,
         skills: ['Excel', 7, '  ', 'Word'],
         experience: [{ jobTitle: 'Clerk', current: 'yes', hacked: '<script>' }],
-        photo: 'javascript:alert(1)',
+        photo: 'data:image/svg+xml;base64,PHN2ZyBvbmxvYWQ9YWxlcnQoMSk+',
       },
     })
     expect(doc.settings).toMatchObject({ cvLang: 'en', template: 'classic', accentColor: '#1d4ed8', showPhoto: false })

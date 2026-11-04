@@ -26,6 +26,7 @@ A web app that only makes CVs, the way Cambodian employers expect them, in Khmer
 | [[Decisions]] | Why things are built the way they are |
 | [[Gotchas and Backlog]] | Open issues and ideas |
 | [[Timeline]] | Commit history and milestones |
+| [[Security Review]] | Security test results (2026-11-05), fixes and accepted risks |
 | [[Commands]] | Dev, build, test and check commands |
 
 ## Rebuild plan (current)

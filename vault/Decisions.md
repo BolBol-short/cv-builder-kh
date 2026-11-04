@@ -6,6 +6,9 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Security test (2026-11-05)
+- Overall risk low. Fixed: build-tool updates, build manifest no longer public, photos limited to JPEG/PNG/WebP, `X-Frame-Options: DENY`, backup size checked before reading. Details in [[Security Review]].
+
 ### Bigger design samples on phones; test page removed (2026-11-04)
 - On phones the design picker (editor step 1) and the landing gallery show one large design at a time (80% of the screen width) and swipe sideways, with "Swipe sideways to see all 10 designs." The chosen design starts in view. Wider screens keep the grid.
 - `spikes/` (device test page) and the `html-to-image` package were deleted after the iPhone tests.

@@ -50,7 +50,6 @@ export default defineConfig({
     }),
   ],
   build: {
-    manifest: true, // lets scripts/check-size.js tell first-load code from lazy code
     rollupOptions: {
       input: {
         landing: resolve(import.meta.dirname, 'index.html'),

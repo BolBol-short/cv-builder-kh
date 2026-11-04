@@ -177,7 +177,9 @@ function repairCv(raw) {
   }
 
   const photo = raw?.photo
-  cv.photo = typeof photo === 'string' && photo.startsWith('data:image/') && photo.length < MAX_PHOTO ? photo : ''
+  // Only plain picture types: an SVG "photo" could carry code.
+  const isPicture = typeof photo === 'string' && /^data:image\/(jpeg|png|webp);base64,/.test(photo)
+  cv.photo = isPicture && photo.length < MAX_PHOTO ? photo : ''
 
   cv.summary = asText(raw?.summary)
 

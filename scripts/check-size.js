@@ -1,4 +1,5 @@
-// Checks the size of the JavaScript the editor downloads, after `npm run build`.
+// Checks the size of the JavaScript the editor downloads, after `vite build --manifest`
+// (npm run check does this; the normal build leaves the manifest out of the public site).
 //   - first load (what app.html needs to start): at most 200 KB gzip
 //   - each lazy part (loaded only when used, e.g. the PDF maker): at most 80 KB gzip
 // Run: node scripts/check-size.js

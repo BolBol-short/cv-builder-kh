@@ -11,7 +11,7 @@ import { Button } from '../../shared/ui/Button.jsx'
 import { ConfirmDialog } from '../../shared/ui/Dialog.jsx'
 import { Icon } from '../../shared/ui/Icon.jsx'
 import { sampleDocument } from '../editor/sampleCV.js'
-import { parseBackup } from '../storage/backup.js'
+import { MAX_BACKUP_SIZE, parseBackup } from '../storage/backup.js'
 import {
   clearEverything,
   deleteDocument,
@@ -55,6 +55,8 @@ export function StartScreen({ onUiLang }) {
     const file = event.target.files?.[0]
     event.target.value = ''
     if (!file) return
+    // Check the size before reading, so a huge file cannot freeze the phone.
+    if (file.size > MAX_BACKUP_SIZE) return setError(t('error.fileTooBig'))
     try {
       openNew(parseBackup(await file.text()), 'review')
     } catch (backupError) {
