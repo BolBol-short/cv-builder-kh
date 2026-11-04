@@ -8,7 +8,6 @@ import { VitePWA } from 'vite-plugin-pwa'
 //   index.html         -> landing page (static, fast, good for search engines)
 //   app.html           -> the CV editor (React)
 //   privacy.html       -> privacy page (static)
-//   spikes/index.html  -> Phase 0 device test page (removed before launch)
 export default defineConfig({
   plugins: [
     react(),
@@ -40,8 +39,6 @@ export default defineConfig({
         globIgnores: [
           'index.html',
           'privacy.html',
-          'spikes/**',
-          'assets/spikes-*',
           '**/*latin-ext*',
           'og-image.jpg',
           'example-cv*.jpg',
@@ -59,7 +56,6 @@ export default defineConfig({
         landing: resolve(import.meta.dirname, 'index.html'),
         app: resolve(import.meta.dirname, 'app.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
-        spikes: resolve(import.meta.dirname, 'spikes/index.html'),
       },
     },
   },

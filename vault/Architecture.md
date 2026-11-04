@@ -11,7 +11,6 @@ updated: 2026-11-04
 index.html    landing page (static HTML, fast, for search engines)
 app.html      the editor (React)  -> src/main.jsx -> src/App.jsx
 privacy.html  privacy page (static)
-spikes/       Phase 0 device test page (removed before launch)
 ```
 
 Vercel serves them at `/`, `/app` and `/privacy` (`cleanUrls` in `vercel.json`).

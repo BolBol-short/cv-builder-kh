@@ -20,7 +20,7 @@ Executable plan for rebuilding CV-Builder. It turns [[Plan]], [[Product]], [[CV 
 | 3 | Done | Ten templates on shared parts (5 more added 2026-11-04: Compact, Timeline, Elegant, Centered, Bold), page splitting, live preview, screenshot tests. Density setting skipped (font size only) |
 | 4 | Builder part done | Two-tap PDF export, share, page pictures, in-app banner, size check. Print button (P4-07) not added: T1 has not asked for it. **Owner:** device matrix (P4-09) |
 | 5 | Done | Offline app, install help, update prompt, landing and privacy pages, report link, axe and offline browser tests. Lighthouse (simulated slow phone): landing 100, editor 94 with LCP 2.5 s |
-| 6 | Partly done | `v1/` deleted and vault rewritten (2026-11-04). **Owner:** deploy, phone tests, beta. Then remove `spikes/` and `html-to-image` |
+| 6 | Partly done | `v1/` deleted, vault rewritten, `spikes/` and `html-to-image` removed (2026-11-04). **Owner:** beta with real users; Android still untested |
 
 Checks on every commit: `npm run check` (lint, 59 unit tests, build, size). The `e2e/` browser tests were removed on 2026-11-04 at the owner's request.
 

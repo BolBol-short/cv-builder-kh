@@ -33,7 +33,7 @@ Unverified until someone with an Android phone runs the spike page and sends a s
 
 ## How to run the tests (owner)
 
-The test page is `spikes/index.html` (built into the site at `/spikes/`).
+The test page was `spikes/index.html` (at `/spikes/`). It was deleted on 2026-11-04 after the iPhone tests; it is still in git history (commit `d9542aa` and earlier).
 
 1. Push the code to GitHub and let Vercel build it (or run `npx vercel` once to get a preview link). The page must be opened over **https**: sharing, copying and storage tests do not work on a plain `http://` address.
 2. On the iPhone, open `https://<your-preview-address>/spikes/` in Safari.

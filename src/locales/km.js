@@ -268,6 +268,7 @@ const km = {
   'action.share': 'ចែករំលែក',
   'export.pictures': 'រូបភាពសម្រាប់កម្មវិធីជជែក',
   'action.privacy': 'ឯកជនភាព',
+  'design.swipeHint': 'អូសទៅឆ្វេង ឬស្ដាំ ដើម្បីមើលរចនាប័ទ្មទាំង {count}។',
 }
 
 export default km

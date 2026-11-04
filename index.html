@@ -46,8 +46,13 @@
       .showcase .front { bottom: 0; right: 0; transform: rotate(3deg); }
       .designs { padding: 0 0 3rem; }
       .designs h2 { font-size: 1.4rem; margin: 0 0 0.25rem; }
-      .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; list-style: none; padding: 0; margin: 1.25rem 0 0; }
-      @media (min-width: 40rem) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+      /* Phones: one large design at a time, swiped sideways. Wider screens: a grid. */
+      .gallery { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; list-style: none;
+                 padding: 0 1rem 0.75rem; margin: 1.25rem -1rem 0; }
+      .gallery li { flex: 0 0 78%; scroll-snap-align: center; }
+      @media (min-width: 40rem) {
+        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); overflow: visible; padding: 0; margin: 1.25rem 0 0; }
+      }
       @media (min-width: 56rem) { .gallery { grid-template-columns: repeat(5, 1fr); } }
       .gallery img { width: 100%; height: auto; display: block; border-radius: 0.4rem; border: 1px solid rgb(28 25 23 / 0.15); }
       .gallery p { margin: 0.4rem 0 0; font-size: 0.95rem; text-align: center; }

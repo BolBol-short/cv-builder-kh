@@ -6,7 +6,7 @@ updated: 2026-11-04
 
 # File Map
 
-Root: `index.html` (landing), `app.html` (editor), `privacy.html`, `vite.config.js` (pages, offline app, tests), `vercel.json` (headers, clean URLs), `eslint.config.js`, `scripts/check-size.js` (download budget), `public/` (icons, example pictures, robots, sitemap), `spikes/` (device test page).
+Root: `index.html` (landing), `app.html` (editor), `privacy.html`, `vite.config.js` (pages, offline app, tests), `vercel.json` (headers, clean URLs), `eslint.config.js`, `scripts/check-size.js` (download budget), `public/` (icons, example pictures, robots, sitemap).
 
 ## `src/`
 

@@ -281,6 +281,7 @@ const en = {
   'action.share': 'Share',
   'export.pictures': 'Pictures for chat apps',
   'action.privacy': 'Privacy',
+  'design.swipeHint': 'Swipe sideways to see all {count} designs.',
 }
 
 export default en

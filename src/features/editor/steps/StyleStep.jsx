@@ -1,4 +1,5 @@
 // Step 1: CV language, design, color, text size and photo on/off.
+import { useEffect, useRef } from 'react'
 import { useDocument } from '../../../app/documentContext.js'
 import { LANGS, useI18n } from '../../../shared/i18n.js'
 import { CheckboxField } from '../../../shared/ui/Field.jsx'
@@ -26,7 +27,8 @@ function ChoiceCard({ name, value, checked, onChange, children, className = '' }
 
 function Group({ title, hint, children }) {
   return (
-    <fieldset>
+    // min-w-0: a fieldset is as wide as its content by default, which breaks the sideways list.
+    <fieldset className="min-w-0">
       <legend className="mb-1 text-base font-bold">{title}</legend>
       {hint && <p className="mb-3 text-sm text-ink/70">{hint}</p>}
       {children}
@@ -40,6 +42,15 @@ export function StyleStep() {
   const { settings } = document
   const setSetting = (field, value) => dispatch({ type: 'setSetting', field, value })
   const isPreset = ACCENT_PRESETS.includes(settings.accentColor.toLowerCase())
+  const designListRef = useRef(null)
+
+  // On phones the designs scroll sideways: start with the chosen design in view.
+  useEffect(() => {
+    const list = designListRef.current
+    const chosen = list?.querySelector('input:checked')?.closest('label')
+    if (!chosen) return
+    list.scrollLeft += chosen.getBoundingClientRect().left - list.getBoundingClientRect().left - 16
+  }, [])
 
   return (
     <div className="space-y-8">
@@ -61,7 +72,12 @@ export function StyleStep() {
       </Group>
 
       <Group title={t('design.template')}>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <p className="mb-3 text-sm text-ink/70 sm:hidden">{t('design.swipeHint', { count: TEMPLATE_IDS.length })}</p>
+        {/* Phones: one large design at a time, swiped sideways. Wider screens: a grid. */}
+        <div
+          ref={designListRef}
+          className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-3 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0"
+        >
           {TEMPLATE_IDS.map((id) => (
             <ChoiceCard
               key={id}
@@ -69,12 +85,14 @@ export function StyleStep() {
               value={id}
               checked={settings.template === id}
               onChange={() => setSetting('template', id)}
-              className="flex-col gap-2"
+              className="w-[80%] shrink-0 snap-center flex-col gap-2 sm:w-auto"
             >
               <TemplateThumbnail templateId={id} />
               <span className="font-medium">{t(`template.${id}`)}</span>
             </ChoiceCard>
           ))}
+          {/* Keeps space after the last design: a sideways list ignores its own right padding. */}
+          <span aria-hidden="true" className="w-1 shrink-0 sm:hidden" />
         </div>
       </Group>
 

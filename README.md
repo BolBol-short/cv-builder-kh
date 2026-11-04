@@ -58,7 +58,6 @@ src/
   features/photo/          photo choose and circle crop
   shared/                  translation helper, formatting, small UI components
   locales/                 all English and Khmer text
-spikes/                    Phase 0 device test page (removed before launch)
 vault/                     project notes and the rebuild plan (open in Obsidian)
 ```
 

@@ -6,6 +6,10 @@ type: decision-log
 
 Short ADR-style log. Add new entries at the top.
 
+### Bigger design samples on phones; test page removed (2026-11-04)
+- On phones the design picker (editor step 1) and the landing gallery show one large design at a time (80% of the screen width) and swipe sideways, with "Swipe sideways to see all 10 designs." The chosen design starts in view. Wider screens keep the grid.
+- `spikes/` (device test page) and the `html-to-image` package were deleted after the iPhone tests.
+
 ### UI/UX polish pass (2026-11-04)
 - Fixed: an empty or short CV showed a blank second page and "2 page(s)" (a fraction of a pixel after shrinking). Page splitting now ignores up to 1 px.
 - Page count reads "1 page" / "N pages". Phone header shows a short "Saved" next to the check mark.
