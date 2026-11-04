@@ -277,21 +277,21 @@ Playwright WebKit is a complement, not proof of iPhone behavior (court ruling F3
 
 From [[Roadmap]], plus the court's conditions:
 
-- [ ] English and Khmer UI; CV language separate
-- [ ] All sections and fields, plus Khmer/Latin name and address
-- [ ] Gender, marital status, date and place of birth, nationality
-- [ ] "Currently here" on jobs and study
-- [ ] Suggestion chips; reorder; delete with undo
-- [ ] Photo upload with a circle crop, shown as a circle on every template
-- [ ] Five templates (or an approved reduction recorded in [[Decisions]])
-- [ ] Accent presets and custom color; page-break markers in preview
-- [ ] Autosave with honest status; backup export/import; example CV; clear all
-- [ ] Progress or gap indicator
-- [ ] Phone editing and preview; two-pane desktop
-- [ ] Khmer digits, month names, line height, fonts
-- [ ] PDF saved as a file on iPhone, Android, and desktop; Khmer correct
-- [ ] Offline after first load; install help; landing and privacy pages
-- [ ] Budgets met; axe clean; no analytics; no third-party requests
+- [x] English and Khmer UI; CV language separate
+- [x] All sections and fields, plus Khmer/Latin name and address
+- [x] Gender, marital status, date and place of birth, nationality
+- [x] "Currently here" on jobs and study
+- [x] Suggestion chips; reorder; delete with undo
+- [x] Photo upload with a circle crop, shown as a circle on every template
+- [x] Five templates (or an approved reduction recorded in [[Decisions]])
+- [x] Accent presets and custom color; page-break markers in preview
+- [x] Autosave with honest status; backup export/import; example CV; clear all
+- [x] Progress or gap indicator
+- [x] Phone editing and preview; two-pane desktop
+- [x] Khmer digits, month names, line height, fonts
+- [ ] PDF saved as a file on iPhone, Android, and desktop; Khmer correct (desktop Chromium verified 2026-11-04; phones pending)
+- [x] Offline after first load; install help; landing and privacy pages
+- [x] Budgets met; axe clean; no analytics; no third-party requests
 - [ ] Device matrix recorded (Phase 4)
 
 ## 8. Report format after each phase
