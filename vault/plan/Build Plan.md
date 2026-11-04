@@ -10,6 +10,20 @@ tags: [rebuild, build, plan]
 
 Executable plan for rebuilding CV-Builder. It turns [[Plan]], [[Product]], [[CV Spec]], [[Technical Design]], [[Roadmap]], and the court rulings in [[Solutions]] into ordered tasks with files and "done when" checks.
 
+## Build status (2026-11-04)
+
+| Phase | State | Notes |
+|---|---|---|
+| 0 | Builder part done | Test page at `/spikes/` (T0 to T8). **Owner:** deploy, run on iPhone, ask Android testers (P0-11, P0-12) |
+| 1 | Done | Tooling, translations, data model, storage, UI kit, `vercel.json` |
+| 2 | Done | Nine guided steps, circle photo crop, start screen, autosave with last-saved time, backup |
+| 3 | Done | Five templates on shared parts, page splitting, live preview, screenshot tests. Density setting skipped (font size only) |
+| 4 | Builder part done | Two-tap PDF export, share, page pictures, in-app banner, size check. Print button (P4-07) not added: T1 has not asked for it. **Owner:** device matrix (P4-09) |
+| 5 | Done | Offline app, install help, update prompt, landing and privacy pages, report link, axe and offline browser tests. Lighthouse (simulated slow phone): landing 100, editor 94 with LCP 2.5 s |
+| 6 | Waiting for owner | Beta, deploy, then remove `spikes/` and ask about deleting `v1/` |
+
+Checks on every commit: `npm run check` (lint, 59 unit tests, build, size) and `npm run e2e` (21 browser tests).
+
 ## 0. How the builder uses this plan
 
 1. Read, in order: this note, [[Solutions]], [[Technical Design]], [[CV Spec]], [[Product]]. Read v1 in place (`v1/src/`, read-only) when porting (section 3: keep/change table and port map).

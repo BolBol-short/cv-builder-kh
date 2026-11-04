@@ -29,9 +29,9 @@ for (const key of firstLoad) firstLoadKb += gzipKb(manifest[key].file)
 let failed = firstLoadKb > FIRST_LOAD_LIMIT_KB
 console.log(`First load: ${firstLoadKb.toFixed(1)} KB gzip (limit ${FIRST_LOAD_LIMIT_KB})`)
 
-// Lazy parts: chunks loaded with import() that are not already in the first load.
+// Lazy parts: every chunk that some other chunk loads with import().
 const lazyKeys = new Set()
-for (const key of firstLoad) for (const dynamic of manifest[key].dynamicImports ?? []) lazyKeys.add(dynamic)
+for (const chunk of Object.values(manifest)) for (const dynamic of chunk.dynamicImports ?? []) lazyKeys.add(dynamic)
 for (const key of lazyKeys) {
   let kb = 0
   for (const part of staticChunks(key)) if (!firstLoad.has(part)) kb += gzipKb(manifest[part].file)

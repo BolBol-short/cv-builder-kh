@@ -17,6 +17,7 @@ Fill this in as the Phase 0 tests run. Gates and what each result decides: [[Sol
 
 | Test | What | Device and OS | Result | Decision |
 |---|---|---|---|---|
+| T0 | Real app: Try an example CV, Create PDF, Download PDF (English and Khmer) | iPhone, Android (tester) | | Confirms the whole export path |
 | T1 | Khmer stress string, html2canvas and dom-to-image into PDF | iPhone, desktop, Android (tester) | | Export engine gate |
 | T2 | Vector libraries (only if T1 fails on a phone) | | | |
 | T3 | Download / share to Files (a, b, c, d) | iPhone | | iPhone save path gate |
