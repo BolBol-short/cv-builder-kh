@@ -7,6 +7,7 @@ A free, frontend-only web app for making a CV (Curriculum Vitae) the way Cambodi
 - **Start date:** 23 July 2026. Rebuilt in November 2026 (version 2).
 - **Free to use:** no payment, no account, no ads. See the [terms of use](https://cv-builder-ebon-xi.vercel.app/terms) and [privacy](https://cv-builder-ebon-xi.vercel.app/privacy) pages.
 - **Live:** https://cv-builder-ebon-xi.vercel.app/
+- **Tip:** open the link in Safari or Chrome. Downloads may not work inside the Facebook, Messenger or Telegram browsers.
 
 ## Features
 
@@ -47,9 +48,10 @@ Then open http://localhost:5173/app.html for the editor (http://localhost:5173/ 
 ## Project layout
 
 ```
-index.html, privacy.html,  static landing, privacy and terms pages
-terms.html
+index.html                 landing page
+privacy.html, terms.html   privacy and terms pages
 app.html                   the editor page
+public/                    icons, example pictures, robots.txt, sitemap.xml, security.txt
 src/
   App.jsx                  picks the language and the screen
   app/                     app shell: header, routing, CV state, save status, install and update prompts
@@ -65,6 +67,10 @@ src/
 ## Deploying
 
 Push to GitHub and import the repository in Vercel (framework preset: Vite). `vercel.json` sets the security headers and clean URLs (`/app`, `/privacy`, `/terms`).
+
+## Report a problem
+
+Open an issue at https://github.com/BolBol-short/cv-builder/issues (the app's "Report a problem" link does this). Please do not paste your CV or personal details.
 
 ## License
 
