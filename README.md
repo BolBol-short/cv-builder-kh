@@ -5,7 +5,8 @@ A free, frontend-only web app for making a CV (Curriculum Vitae) the way Cambodi
 - **Objective:** a fully frontend website where anyone can create their own work CV.
 - **Motivation:** some people don't have time to write a CV, some don't know where to make one, and some (like me) need instructions on what to fill in.
 - **Start date:** 23 July 2026. Rebuilt in November 2026 (version 2).
-- **Terms of use:** use it to make CVs. Any inappropriate use is not the author's responsibility.
+- **Free to use:** no payment, no account, no ads. See the [terms of use](https://cv-builder-ebon-xi.vercel.app/terms) and [privacy](https://cv-builder-ebon-xi.vercel.app/privacy) pages.
+- **Live:** https://cv-builder-ebon-xi.vercel.app/
 
 ## Features
 
@@ -46,7 +47,8 @@ Then open http://localhost:5173/app.html for the editor (http://localhost:5173/ 
 ## Project layout
 
 ```
-index.html, privacy.html   static landing and privacy pages
+index.html, privacy.html,  static landing, privacy and terms pages
+terms.html
 app.html                   the editor page
 src/
   App.jsx                  picks the language and the screen
@@ -58,13 +60,12 @@ src/
   features/photo/          photo choose and circle crop
   shared/                  translation helper, formatting, small UI components
   locales/                 all English and Khmer text
-vault/                     project notes and the rebuild plan (open in Obsidian)
 ```
 
 ## Deploying
 
-Push to GitHub and import the repository in Vercel (framework preset: Vite). `vercel.json` sets the security headers and clean URLs (`/app`, `/privacy`).
+Push to GitHub and import the repository in Vercel (framework preset: Vite). `vercel.json` sets the security headers and clean URLs (`/app`, `/privacy`, `/terms`).
 
-## Documentation
+## License
 
-The plan, decisions and test results live in `vault/` (start at `vault/00 Home.md`; the task list is `vault/plan/Build Plan.md`).
+MIT, see [LICENSE](LICENSE). The bundled fonts (Inter, Kantumruy Pro, Moul) use the SIL Open Font License 1.1.

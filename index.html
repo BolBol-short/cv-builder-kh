@@ -12,12 +12,32 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#1d4ed8" />
+    <meta name="application-name" content="CV-Builder" />
+    <meta name="author" content="BolBol" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CV-Builder" />
+    <meta property="og:locale" content="km_KH" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:title" content="CV-Builder — Make a CV for jobs in Cambodia" />
     <meta property="og:description" content="Write your CV in Khmer or English and download it as a PDF. Free, no account." />
     <meta property="og:url" content="https://cv-builder-ebon-xi.vercel.app/" />
     <meta property="og:image" content="https://cv-builder-ebon-xi.vercel.app/og-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
+    <!-- Tells search engines this is a free web app (price 0). Data only, never run as code. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CV-Builder",
+        "url": "https://cv-builder-ebon-xi.vercel.app/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any (web browser)",
+        "inLanguage": ["km", "en"],
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Make a CV for jobs in Cambodia, in Khmer or English, and download it as a PDF. Free, no account."
+      }
+    </script>
     <style>
       /* Three colors only: ink #1c1917, paper #ffffff, accent #1d4ed8. System fonts keep this page fast. */
       :root { --ink: #1c1917; --paper: #ffffff; --accent: #1d4ed8; }
@@ -177,6 +197,7 @@
     <footer>
       <div class="wrap">
         <a href="/privacy">ឯកជនភាព · Privacy</a>
+        <a href="/terms">លក្ខខណ្ឌប្រើប្រាស់ · Terms of use</a>
         <a href="https://github.com/BolBol-short/cv-builder/issues/new" target="_blank" rel="noopener noreferrer"
           >រាយការណ៍បញ្ហា · Report a problem</a
         >

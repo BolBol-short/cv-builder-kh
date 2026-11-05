@@ -160,6 +160,4 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 
-# Obsidian per-user UI state
-vault/.obsidian/workspace*.json
 

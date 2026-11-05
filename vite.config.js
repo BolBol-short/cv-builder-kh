@@ -8,6 +8,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 //   index.html         -> landing page (static, fast, good for search engines)
 //   app.html           -> the CV editor (React)
 //   privacy.html       -> privacy page (static)
+//   terms.html         -> terms of use (static)
 export default defineConfig({
   plugins: [
     react(),
@@ -39,6 +40,7 @@ export default defineConfig({
         globIgnores: [
           'index.html',
           'privacy.html',
+          'terms.html',
           '**/*latin-ext*',
           'og-image.jpg',
           'example-cv*.jpg',
@@ -55,6 +57,7 @@ export default defineConfig({
         landing: resolve(import.meta.dirname, 'index.html'),
         app: resolve(import.meta.dirname, 'app.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
+        terms: resolve(import.meta.dirname, 'terms.html'),
       },
     },
   },

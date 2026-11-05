@@ -269,6 +269,7 @@ const km = {
   'export.pictures': 'រូបភាពសម្រាប់កម្មវិធីជជែក',
   'action.privacy': 'ឯកជនភាព',
   'design.swipeHint': 'អូសទៅឆ្វេង ឬស្ដាំ ដើម្បីមើលរចនាប័ទ្មទាំង {count}។',
+  'action.terms': 'លក្ខខណ្ឌប្រើប្រាស់',
 }
 
 export default km

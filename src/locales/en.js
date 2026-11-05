@@ -282,6 +282,7 @@ const en = {
   'export.pictures': 'Pictures for chat apps',
   'action.privacy': 'Privacy',
   'design.swipeHint': 'Swipe sideways to see all {count} designs.',
+  'action.terms': 'Terms of use',
 }
 
 export default en

@@ -160,9 +160,14 @@ export function StartScreen({ onUiLang }) {
           </Button>
           <div className="mt-4 space-y-2">
             <ReportProblemLink />
-            <a href="/privacy" className="text-sm font-semibold text-accent underline-offset-4 hover:underline">
-              {t('action.privacy')}
-            </a>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <a href="/privacy" className="text-sm font-semibold text-accent underline-offset-4 hover:underline">
+                {t('action.privacy')}
+              </a>
+              <a href="/terms" className="text-sm font-semibold text-accent underline-offset-4 hover:underline">
+                {t('action.terms')}
+              </a>
+            </div>
           </div>
         </div>
       </main>
