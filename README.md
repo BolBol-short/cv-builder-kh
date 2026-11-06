@@ -51,7 +51,7 @@ Then open http://localhost:5173/app.html for the editor (http://localhost:5173/ 
 index.html                 landing page
 privacy.html, terms.html   privacy and terms pages
 app.html                   the editor page
-public/                    icons, example pictures, robots.txt, sitemap.xml, security.txt
+public/                    icons, example pictures, robots.txt, sitemap.xml
 src/
   App.jsx                  picks the language and the screen
   app/                     app shell: header, routing, CV state, save status, install and update prompts
